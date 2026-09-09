@@ -185,11 +185,9 @@ section{padding:clamp(78px,11vh,175px) 0}
 /* people */
 .people{display:grid;grid-template-columns:repeat(2,1fr);gap:0;
   border-top:1px solid var(--hair)}
-.pp{padding:52px 56px 56px;border-right:1px solid var(--hair);
-  border-bottom:1px solid var(--hair)}
+.pp{padding:52px 56px 56px;border-right:1px solid var(--hair)}
 .pp:nth-child(2n+1){padding-left:0}
 .pp:nth-child(2n){border-right:none;padding-right:0}
-.pp:last-child{border-bottom:none}
 .ph{position:relative;aspect-ratio:4/5;max-width:360px;margin-bottom:28px;overflow:hidden;
   background:linear-gradient(160deg,#161A1E 0%,#0F1214 55%,#12161A 100%);
   border:1px solid var(--hair);transition:border-color .55s var(--ease)}
@@ -457,9 +455,9 @@ html,body{max-width:100%}
 
 @media(max-width:820px){
   .people{grid-template-columns:1fr}
-  .pp{padding:36px 0 40px;border-right:none}
+  .pp{padding:36px 0 40px;border-right:none;border-top:1px solid var(--hair)}
   .pp:nth-child(2n){padding-right:0}
-  .pp:last-child{border-bottom:none}
+  .pp:first-child{border-top:none}
   .ph{max-width:none}
 }
 
@@ -641,7 +639,7 @@ body.audit .src{display:block}
     <a class="mark" href="#">Ulutürk<em>ATTORNEY PARTNERSHIP</em></a>
     <div class="links">
       <a href="#practice" data-k="nav1">Practice</a>
-      <a href="#people" data-k="nav2">People</a>
+      <a href="#people" data-k="nav2">Founders</a>
       <a href="#experience" data-k="nav3">Experience</a>
       <a href="#insight" data-k="nav4">Insight</a>
       <a href="#contact" data-k="nav5">Contact</a>
@@ -657,7 +655,7 @@ body.audit .src{display:block}
 
 <div class="sheet" id="sheet">
   <a href="#practice" data-k="nav1">Practice</a>
-  <a href="#people" data-k="nav2">People</a>
+  <a href="#people" data-k="nav2">Founders</a>
   <a href="#experience" data-k="nav3">Experience</a>
   <a href="#insight" data-k="nav4">Insight</a>
   <a href="#contact" data-k="nav5">Contact</a>
@@ -763,7 +761,7 @@ body.audit .src{display:block}
 
 <section id="people">
   <div class="wrap">
-    <div class="head rv"><h2 data-k="s2">People</h2><span class="tiny" data-k="s2t">THE PARTNERSHIP</span></div>
+    <div class="head rv"><h2 data-k="s2">Founders</h2><span class="tiny" data-k="s2t">FOUNDING PARTNERS</span></div>
     <div class="people rv">
       <div class="pp">
         <div class="ph">
@@ -772,8 +770,8 @@ body.audit .src{display:block}
           <i></i><i></i><i></i><i></i>
           <span class="cap" data-k="phCap">PORTRAIT</span>
         </div>
-        <h3 data-k="pn1">[Managing Partner]</h3>
-        <div class="role" data-k="r1">MANAGING PARTNER</div>
+        <h3 data-k="pn1">[Founding Partner]</h3>
+        <div class="role" data-k="r1">FOUNDING PARTNER</div>
         <div class="meta">
           <span data-k="m1">Construction · Energy · Arbitration</span><br>
           <b data-k="mb">Bar:</b> <span data-k="mbv">Istanbul</span><br>
@@ -787,27 +785,12 @@ body.audit .src{display:block}
           <i></i><i></i><i></i><i></i>
           <span class="cap" data-k="phCap">PORTRAIT</span>
         </div>
-        <h3 data-k="pn2">[Partner]</h3>
-        <div class="role" data-k="r2">PARTNER</div>
+        <h3 data-k="pn2">[Founding Partner]</h3>
+        <div class="role" data-k="r2">FOUNDING PARTNER</div>
         <div class="meta">
-          <span data-k="m2">Shipping · Commodities · Trade finance</span><br>
+          <span data-k="m2">Shipping · Commodities · Enforcement</span><br>
           <b data-k="mb">Bar:</b> <span data-k="mbv">Istanbul</span><br>
           <b data-k="ml">Languages:</b> Türkçe, English, Deutsch
-        </div>
-      </div>
-      <div class="pp">
-        <div class="ph">
-          <svg viewBox="0 0 200 250" fill="none" aria-hidden="true"><g stroke="#B99B57" stroke-width=".5" opacity=".18"><circle cx="100" cy="112" r="86"/><circle cx="100" cy="112" r="64"/><circle cx="100" cy="112" r="40"/></g><g stroke="#B99B57" stroke-width=".4" opacity=".1"><line x1="100" y1="8" x2="100" y2="216"/><line x1="-4" y1="112" x2="204" y2="112"/><line x1="30" y1="42" x2="170" y2="182"/><line x1="170" y1="42" x2="30" y2="182"/></g></svg>
-          <span class="no">03</span>
-          <i></i><i></i><i></i><i></i>
-          <span class="cap" data-k="phCap">PORTRAIT</span>
-        </div>
-        <h3 data-k="pn3">[Counsel]</h3>
-        <div class="role" data-k="r3">COUNSEL</div>
-        <div class="meta">
-          <span data-k="m3">Enforcement · Insolvency · Asset recovery</span><br>
-          <b data-k="mb">Bar:</b> <span data-k="mbv">Istanbul</span><br>
-          <b data-k="ml">Languages:</b> Türkçe, English
         </div>
       </div>
     </div>
@@ -1097,7 +1080,7 @@ body.audit .src{display:block}
       <div class="fcol">
         <h5 data-k="fNav">NAVIGATE</h5>
         <a href="#practice" data-k="nav1">Practice</a>
-        <a href="#people" data-k="nav2">People</a>
+        <a href="#people" data-k="nav2">Founders</a>
         <a href="#experience" data-k="nav3">Experience</a>
         <a href="#insight" data-k="nav4">Insight</a>
         <a href="#contact" data-k="nav5">Contact</a>
@@ -1139,16 +1122,15 @@ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- i18n ---------- */
 var TR={
- nav1:"Uzmanlık",nav2:"Ekip",nav3:"Deneyim",nav4:"Yayınlar",nav5:"İletişim",
+ nav1:"Uzmanlık",nav2:"Kurucular",nav3:"Deneyim",nav4:"Yayınlar",nav5:"İletişim",
  h1a:"Türk hukuku,",h1b:"uluslararası",h1c:"<em>standartta</em> savunulur.",
  lede:"Bir projenin kâr edip etmeyeceğini belirleyen uyuşmazlıklarda görev alıyoruz. İstanbul merkezli; Londra, Dubai, Rotterdam ve Singapur'dan talimat alıyoruz.",
  f1:"talimat aldığımız kıta sayısı",f2:"ortaklıkta kullanılan çalışma dili",
  f3:"uzmanlık alanı — EPC sözleşmelerinden yaptırım uyumuna",
  f4:"New York Sözleşmesi — yabancı kararları Türkiye'de tenfiz ettiğimiz dayanak",
  s1:"Uzmanlık",s1t:"SEÇEREK İNCELEYİN",
- s2:"Ekip",s2t:"ORTAKLIK",r1:"YÖNETİCİ ORTAK",r2:"ORTAK",r3:"KIDEMLİ AVUKAT",
- m1:"İnşaat · Enerji · Tahkim",m2:"Denizcilik · Emtia · Ticaret finansmanı",
- m3:"Tenfiz · İflas · Alacak takibi",mb:"Baro:",ml:"Diller:",
+ s2:"Kurucularımız",s2t:"KURUCU ORTAKLAR",r1:"KURUCU ORTAK",r2:"KURUCU ORTAK",
+ m1:"İnşaat · Enerji · Tahkim",m2:"Denizcilik · Emtia · Tenfiz",mb:"Baro:",ml:"Diller:",
  s3:"Seçilmiş deneyim",s3t:"ANONİMLEŞTİRİLMİŞ",swipe:"← Kaydırın →",
  e1:"Türkiye'deki bir altyapı projesinde gecikme ve verimsizlik iddialarına ilişkin ICC tahkiminde Avrupalı EPC yüklenicisinin temsili.",
  e2:"Bir yakıt tedarikçisi adına Türk limanında dökme yük gemisinin ihtiyati haczi ve kulüp teminatı karşılığı serbest bırakılmasının müzakeresi.",
@@ -1220,7 +1202,7 @@ var TR={
  n3t:"Dosyayı yürütecek ortakla görüşme",n3b:"Karşılama ekibiyle değil, işi fiilen yürütecek avukatla.",
  phCap:"PORTRE",mbv:"İstanbul",aAut:"[Ortak Adı]",
  fAdr:"Papirus Plaza<br>Merkez Mah. Ayazma Cad. No: 37/117<br>34406 Kağıthane<br>İstanbul, Türkiye",
- pn1:"[Yönetici Ortak]",pn2:"[Ortak]",pn3:"[Kıdemli Avukat]",
+ pn1:"[Kurucu Ortak]",pn2:"[Kurucu Ortak]",
  et1:"İNŞAAT · ICC",et2:"DENİZCİLİK · İSTANBUL",et3:"TENFİZ · NEW YORK SÖZLEŞMESİ",
  et4:"ENERJİ · MEVZUAT",et5:"EMTİA · GAFTA",
  ff1:"ENERJİ",ff2:"DENİZCİLİK",ff3:"TAHKİM",ff4:"İNŞAAT",
@@ -1645,7 +1627,7 @@ var IDX={
   {h:"Can an LCIA award be enforced in Türkiye?",s:"QUESTION",go:"page",pi:5},
   {h:"How quickly can a vessel be arrested?",s:"QUESTION",hash:"#practice"},
   {h:"Is ISTAC an alternative to ICC?",s:"QUESTION",hash:"#practice"},
-  {h:"The partnership",s:"PEOPLE",hash:"#people"},
+  {h:"The founding partners",s:"FOUNDERS",hash:"#people"},
   {h:"Contact and office",s:"CONTACT",hash:"#contact"}
  ],
  tr:[
@@ -1662,7 +1644,7 @@ var IDX={
   {h:"LCIA kararı Türkiye'de tenfiz edilebilir mi?",s:"SORU",go:"page",pi:5},
   {h:"Gemi ne kadar sürede haczedilebilir?",s:"SORU",hash:"#practice"},
   {h:"ISTAC, ICC'ye alternatif mi?",s:"SORU",hash:"#practice"},
-  {h:"Ortaklık",s:"EKİP",hash:"#people"},
+  {h:"Kurucu ortaklar",s:"KURUCULAR",hash:"#people"},
   {h:"İletişim ve ofis",s:"İLETİŞİM",hash:"#contact"}
  ]
 };
@@ -1745,7 +1727,7 @@ fs.addEventListener('click',function(){
 /* ---------- yan bölüm göstergesi + canlı saat ---------- */
 var SEC=[
   {id:'practice', en:'PRACTICE',   tr:'UZMANLIK'},
-  {id:'people',   en:'PEOPLE',     tr:'EKİP'},
+  {id:'people',   en:'FOUNDERS',   tr:'KURUCULAR'},
   {id:'experience',en:'EXPERIENCE',tr:'DENEYİM'},
   {id:'insight',  en:'INSIGHT',    tr:'YAYINLAR'},
   {id:'contact',  en:'CONTACT',    tr:'İLETİŞİM'}
