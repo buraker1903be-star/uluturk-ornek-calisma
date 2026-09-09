@@ -278,7 +278,7 @@ details p{margin:16px 0 0;color:var(--fog);max-width:64ch;font-size:15.5px;
 address{font-style:normal;line-height:1.9;font-size:15.5px}
 footer{border-top:1px solid var(--hair);padding:clamp(56px,7vh,86px) 0 0;color:var(--fog);
   background:linear-gradient(180deg,rgba(185,155,87,.035) 0%,transparent 42%)}
-.fgrid{display:grid;grid-template-columns:1.5fr .8fr 1.15fr 1.25fr;gap:clamp(34px,4vw,64px);
+.fgrid{display:grid;grid-template-columns:1.5fr .8fr 1.1fr 1.3fr;gap:clamp(34px,4vw,64px);
   padding-bottom:clamp(44px,6vh,68px)}
 @media(max-width:1000px){.fgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.fgrid{grid-template-columns:1fr;gap:36px}}
@@ -681,11 +681,11 @@ body.audit .src{display:block}
           <i></i><i></i><i></i><i></i>
           <span class="cap" data-k="phCap">PORTRAIT</span>
         </div>
-        <h3>[Managing Partner]</h3>
+        <h3 data-k="pn1">[Managing Partner]</h3>
         <div class="role" data-k="r1">MANAGING PARTNER</div>
         <div class="meta">
           <span data-k="m1">Construction · Energy · Arbitration</span><br>
-          <b data-k="mb">Bar:</b> Istanbul<br>
+          <b data-k="mb">Bar:</b> <span data-k="mbv">Istanbul</span><br>
           <b data-k="ml">Languages:</b> Türkçe, English
         </div>
       </div>
@@ -696,11 +696,11 @@ body.audit .src{display:block}
           <i></i><i></i><i></i><i></i>
           <span class="cap" data-k="phCap">PORTRAIT</span>
         </div>
-        <h3>[Partner]</h3>
+        <h3 data-k="pn2">[Partner]</h3>
         <div class="role" data-k="r2">PARTNER</div>
         <div class="meta">
           <span data-k="m2">Shipping · Commodities · Trade finance</span><br>
-          <b data-k="mb">Bar:</b> Istanbul<br>
+          <b data-k="mb">Bar:</b> <span data-k="mbv">Istanbul</span><br>
           <b data-k="ml">Languages:</b> Türkçe, English, Deutsch
         </div>
       </div>
@@ -711,11 +711,11 @@ body.audit .src{display:block}
           <i></i><i></i><i></i><i></i>
           <span class="cap" data-k="phCap">PORTRAIT</span>
         </div>
-        <h3>[Counsel]</h3>
+        <h3 data-k="pn3">[Counsel]</h3>
         <div class="role" data-k="r3">COUNSEL</div>
         <div class="meta">
           <span data-k="m3">Enforcement · Insolvency · Asset recovery</span><br>
-          <b data-k="mb">Bar:</b> Istanbul<br>
+          <b data-k="mb">Bar:</b> <span data-k="mbv">Istanbul</span><br>
           <b data-k="ml">Languages:</b> Türkçe, English
         </div>
       </div>
@@ -748,11 +748,11 @@ body.audit .src{display:block}
   <div class="wrap">
     <div class="head rv"><h2 data-k="s3">Selected experience</h2><span class="tiny" data-k="s3t">ANONYMISED</span></div>
     <div class="exp rv">
-      <div class="card"><div class="t">CONSTRUCTION · ICC</div><p data-k="e1">Acting for a European EPC contractor in an ICC arbitration concerning delay and disruption on a Turkish infrastructure project.</p></div>
-      <div class="card"><div class="t">SHIPPING · ISTANBUL</div><p data-k="e2">Securing the arrest of a bulk carrier in a Turkish port for a bunker supplier, and negotiating release against club security.</p></div>
-      <div class="card"><div class="t">ENFORCEMENT · NEW YORK CONVENTION</div><p data-k="e3">Enforcing an LCIA award against a Turkish counterparty, including asset tracing and interim attachment before the hearing.</p></div>
-      <div class="card"><div class="t">ENERGY · REGULATORY</div><p data-k="e4">Advising an international developer on licensing and offtake structure for a renewable generation portfolio in Türkiye.</p></div>
-      <div class="card"><div class="t">COMMODITIES · GAFTA</div><p data-k="e5">Representing a grain trader in a GAFTA arbitration arising from a rejected cargo and a documentary credit dispute.</p></div>
+      <div class="card"><div class="t" data-k="et1">CONSTRUCTION · ICC</div><p data-k="e1">Acting for a European EPC contractor in an ICC arbitration concerning delay and disruption on a Turkish infrastructure project.</p></div>
+      <div class="card"><div class="t" data-k="et2">SHIPPING · ISTANBUL</div><p data-k="e2">Securing the arrest of a bulk carrier in a Turkish port for a bunker supplier, and negotiating release against club security.</p></div>
+      <div class="card"><div class="t" data-k="et3">ENFORCEMENT · NEW YORK CONVENTION</div><p data-k="e3">Enforcing an LCIA award against a Turkish counterparty, including asset tracing and interim attachment before the hearing.</p></div>
+      <div class="card"><div class="t" data-k="et4">ENERGY · REGULATORY</div><p data-k="e4">Advising an international developer on licensing and offtake structure for a renewable generation portfolio in Türkiye.</p></div>
+      <div class="card"><div class="t" data-k="et5">COMMODITIES · GAFTA</div><p data-k="e5">Representing a grain trader in a GAFTA arbitration arising from a rejected cargo and a documentary credit dispute.</p></div>
     </div>
     <div class="hint" data-k="swipe">← Scroll →</div>
     <div class="note">
@@ -770,42 +770,42 @@ body.audit .src{display:block}
 
     <div class="filters rv">
       <button data-f="all" aria-pressed="true" data-k="fAll">ALL</button>
-      <button data-f="energy" aria-pressed="false">ENERGY</button>
-      <button data-f="shipping" aria-pressed="false">SHIPPING</button>
-      <button data-f="arb" aria-pressed="false">ARBITRATION</button>
-      <button data-f="constr" aria-pressed="false">CONSTRUCTION</button>
+      <button data-f="energy" aria-pressed="false" data-k="ff1">ENERGY</button>
+      <button data-f="shipping" aria-pressed="false" data-k="ff2">SHIPPING</button>
+      <button data-f="arb" aria-pressed="false" data-k="ff3">ARBITRATION</button>
+      <button data-f="constr" aria-pressed="false" data-k="ff4">CONSTRUCTION</button>
     </div>
 
     <div class="posts rv">
       <a class="post" href="#" data-c="energy">
-        <span class="d">20 May 2026</span>
+        <span class="d" data-k="pd1">20 May 2026</span>
         <h3 data-k="p1">Türkiye cuts nuclear construction withholding to 1%. Who keeps the difference?</h3>
-        <span class="tag">ENERGY · TAX</span>
+        <span class="tag" data-k="pt1">ENERGY · TAX</span>
       </a>
       <a class="post" href="#" data-c="shipping">
-        <span class="d">14 Apr 2026</span>
+        <span class="d" data-k="pd2">14 Apr 2026</span>
         <h3 data-k="p2">Arresting a vessel in a Turkish port: what security the court will expect</h3>
-        <span class="tag">SHIPPING</span>
+        <span class="tag" data-k="pt2">SHIPPING</span>
       </a>
       <a class="post" href="#" data-c="arb">
-        <span class="d">02 Mar 2026</span>
+        <span class="d" data-k="pd3">02 Mar 2026</span>
         <h3 data-k="p3">Pathological arbitration clauses in Türkiye-connected contracts, and how courts read them</h3>
-        <span class="tag">ARBITRATION</span>
+        <span class="tag" data-k="pt3">ARBITRATION</span>
       </a>
       <a class="post" href="#" data-c="constr">
-        <span class="d">19 Jan 2026</span>
+        <span class="d" data-k="pd4">19 Jan 2026</span>
         <h3 data-k="p4">On-demand bonds under Turkish law: when will a court restrain a call?</h3>
-        <span class="tag">CONSTRUCTION</span>
+        <span class="tag" data-k="pt4">CONSTRUCTION</span>
       </a>
     </div>
 
     <div class="art rv">
-      <div class="crumb"><a href="#">Home</a> · <a href="#">Insight</a> · <a href="#">Energy &amp; Tax</a></div>
+      <div class="crumb" data-k="aCrumb"><a href="#">Home</a> · <a href="#">Insight</a> · <a href="#">Energy &amp; Tax</a></div>
       <h3 data-k="aT">Türkiye cuts nuclear construction withholding to 1%. Who actually keeps the difference?</h3>
       <div class="byl">
-        <span><span data-k="by">By</span> <b>[Partner name]</b></span>
-        <span><span data-k="pub">Published</span> 20 May 2026</span>
-        <span><span data-k="upd">Updated</span> 3 June 2026</span>
+        <span><span data-k="by">By</span> <b data-k="aAut">[Partner name]</b></span>
+        <span><span data-k="pub">Published</span> <span data-k="aPub">20 May 2026</span></span>
+        <span><span data-k="upd">Updated</span> <span data-k="aUpd">3 June 2026</span></span>
         <span>7 <span data-k="min">min</span></span>
       </div>
       <div class="ans">
@@ -991,7 +991,7 @@ body.audit .src{display:block}
   <div class="palbox">
     <input type="text" id="palInput" placeholder="Search practice areas, insight, questions…" autocomplete="off">
     <div class="palres" id="palRes"></div>
-    <div class="palfoot">↑↓ NAVIGATE · ENTER OPEN · ESC CLOSE</div>
+    <div class="palfoot" data-k="palFoot">↑↓ NAVIGATE · ENTER OPEN · ESC CLOSE</div>
   </div>
 </div>
 
@@ -1012,14 +1012,6 @@ body.audit .src{display:block}
         <a href="#contact" data-k="nav5">Contact</a>
       </div>
       <div class="fcol">
-        <h5 data-k="fCon">CONTACT</h5>
-        <a class="fmail" href="mailto:info@uluturk.av.tr">info@uluturk.av.tr</a>
-        <a href="tel:+902126932626">+90 212 693 26 26</a>
-        <a href="https://www.linkedin.com/company/uluturk/">LinkedIn</a>
-        <address>Papirus Plaza<br>Merkez Mah. Ayazma Cad. No: 37/117<br>34406 Kağıthane<br>Istanbul, Türkiye</address>
-        <p class="fhours" data-k="fHrs">Monday – Friday · 09:00 – 18:00 (GMT+3)</p>
-      </div>
-      <div class="fcol">
         <h5 data-k="fPr">PRACTICE</h5>
         <a href="#" class="fpa" data-i="0">Construction &amp; Infrastructure</a>
         <a href="#" class="fpa" data-i="1">Energy &amp; Natural Resources</a>
@@ -1027,6 +1019,14 @@ body.audit .src{display:block}
         <a href="#" class="fpa" data-i="3">Shipping &amp; Admiralty</a>
         <a href="#" class="fpa" data-i="4">Commodities &amp; Trade</a>
         <a href="#" class="fpa" data-i="5">Enforcement</a>
+      </div>
+      <div class="fcol">
+        <h5 data-k="fCon">CONTACT</h5>
+        <a class="fmail" href="mailto:info@uluturk.av.tr">info@uluturk.av.tr</a>
+        <a href="tel:+902126932626">+90 212 693 26 26</a>
+        <a href="https://www.linkedin.com/company/uluturk/">LinkedIn</a>
+        <address data-k="fAdr">Papirus Plaza<br>Merkez Mah. Ayazma Cad. No: 37/117<br>34406 Kağıthane<br>Istanbul, Türkiye</address>
+        <p class="fhours" data-k="fHrs">Monday – Friday · 09:00 – 18:00 (GMT+3)</p>
       </div>
     </div>
     <div class="fbot">
@@ -1127,7 +1127,17 @@ var TR={
  n1t:"Aynı gün okuruz",n1b:"İstanbul saatiyle 17:00'den önce ulaşan başvurular aynı gün değerlendirilir.",
  n2t:"Menfaat çatışması kontrolü",n2b:"Siz gizli bir şey göndermeden önce görev alabileceğimizi teyit ederiz.",
  n3t:"Dosyayı yürütecek ortakla görüşme",n3b:"Karşılama ekibiyle değil, işi fiilen yürütecek avukatla.",
- phCap:"PORTRE",fPr:"UZMANLIK",fCon:"İLETİŞİM",fHrs:"Pazartesi – Cuma · 09:00 – 18:00 (GMT+3)",dirH:"DOĞRUDAN",dirN:"Pazartesi – Cuma · 09:00 – 18:00 (GMT+3)",
+ phCap:"PORTRE",mbv:"İstanbul",aAut:"[Ortak Adı]",
+ fAdr:"Papirus Plaza<br>Merkez Mah. Ayazma Cad. No: 37/117<br>34406 Kağıthane<br>İstanbul, Türkiye",
+ pn1:"[Yönetici Ortak]",pn2:"[Ortak]",pn3:"[Kıdemli Avukat]",
+ et1:"İNŞAAT · ICC",et2:"DENİZCİLİK · İSTANBUL",et3:"TENFİZ · NEW YORK SÖZLEŞMESİ",
+ et4:"ENERJİ · MEVZUAT",et5:"EMTİA · GAFTA",
+ ff1:"ENERJİ",ff2:"DENİZCİLİK",ff3:"TAHKİM",ff4:"İNŞAAT",
+ pd1:"20 Mayıs 2026",pd2:"14 Nisan 2026",pd3:"02 Mart 2026",pd4:"19 Ocak 2026",
+ pt1:"ENERJİ · VERGİ",pt2:"DENİZCİLİK",pt3:"TAHKİM",pt4:"İNŞAAT",
+ aCrumb:'<a href="#">Ana sayfa</a> · <a href="#">Yayınlar</a> · <a href="#">Enerji ve Vergi</a>',
+ aPub:"20 Mayıs 2026",aUpd:"3 Haziran 2026",
+ palFoot:"↑↓ GEZİN · ENTER AÇ · ESC KAPAT",fPr:"UZMANLIK",fCon:"İLETİŞİM",fHrs:"Pazartesi – Cuma · 09:00 – 18:00 (GMT+3)",dirH:"DOĞRUDAN",dirN:"Pazartesi – Cuma · 09:00 – 18:00 (GMT+3)",
  fNote:"Form gönderimi avukat–müvekkil ilişkisi kurmaz. Menfaat çatışması kontrolü tamamlanıp görev alabileceğimizi teyit edene kadar lütfen gizli bilgi paylaşmayın.",
  epOpen:"TAM SAYFAYI AÇ"
 };
@@ -1141,6 +1151,10 @@ function setLang(l){
   document.querySelectorAll('[data-k]').forEach(function(el){
     var v = dict[el.dataset.k]; if(v!==undefined) el.innerHTML=v;
   });
+  var pi=document.getElementById('palInput');
+  if(pi) pi.placeholder=(l==='tr')
+    ? 'Uzmanlık alanı, yayın veya soru arayın…'
+    : 'Search practice areas, insight, questions…';
   document.documentElement.lang = l;
   document.getElementById('bEN').setAttribute('aria-pressed', l==='en');
   document.getElementById('bTR').setAttribute('aria-pressed', l==='tr');
