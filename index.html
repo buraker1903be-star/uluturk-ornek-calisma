@@ -278,7 +278,7 @@ details p{margin:16px 0 0;color:var(--fog);max-width:64ch;font-size:15.5px;
 address{font-style:normal;line-height:1.9;font-size:15.5px}
 footer{border-top:1px solid var(--hair);padding:clamp(56px,7vh,86px) 0 0;color:var(--fog);
   background:linear-gradient(180deg,rgba(185,155,87,.035) 0%,transparent 42%)}
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1fr;gap:clamp(34px,4vw,64px);
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1.4fr;gap:clamp(34px,4vw,64px);
   padding-bottom:clamp(44px,6vh,68px)}
 @media(max-width:1000px){.fgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.fgrid{grid-template-columns:1fr;gap:36px}}
@@ -363,6 +363,12 @@ footer{border-top:1px solid var(--hair);padding:clamp(56px,7vh,86px) 0 0;color:v
   font-family:"Jost",sans-serif;font-size:11px;letter-spacing:.18em;padding:11px 20px;
   cursor:pointer;transition:background .35s,color .35s}
 .openbtn:hover{background:var(--brass);color:var(--void)}
+
+.ctaband{background:var(--ink);border-top:1px solid var(--hair);padding:clamp(56px,8vh,96px) 0}
+.ctaband h2{font-family:"Cormorant Garamond",serif;font-weight:300;
+  font-size:clamp(26px,3.6vw,46px);margin-bottom:16px}
+.ctaband p{color:var(--fog);max-width:48ch;margin-bottom:32px}
+.dirAdr{font-style:normal;font-size:14.5px;line-height:1.75;color:var(--fog);margin:20px 0 0}
 
 /* iletişim bölümü */
 .ctas{background:var(--ink);position:relative}
@@ -914,18 +920,49 @@ body.audit .src{display:block}
 <section id="contact">
   <div class="wrap">
     <div class="head rv"><h2 data-k="s7">Contact</h2><span class="tiny">ISTANBUL</span></div>
-    <div class="cgrid rv">
-      <div><h4 data-k="c1">OFFICE</h4><address>Papirus Plaza<br>Merkez Mah. Ayazma Cad. No: 37/117<br>34406 Kağıthane<br>Istanbul, Türkiye</address></div>
-      <div><h4 data-k="c4">EMAIL</h4><p><a class="uline" href="mailto:info@uluturk.av.tr">info@uluturk.av.tr</a></p></div>
-      <div><h4 data-k="c2">TELEPHONE</h4><p><a class="uline" href="tel:+902126932626">+90 212 693 26 26</a></p></div>
-      <div><h4 data-k="c3">HOURS</h4><p><span data-k="c3v">Monday – Friday</span><br>09:00 – 18:00 (GMT+3)</p></div>
-      <div><h4>LINKEDIN</h4><p><a class="uline" href="https://www.linkedin.com/company/uluturk/">Ulutürk Attorney Partnership</a></p></div>
+    <div class="ctagrid rv">
+      <div class="ctaside">
+        <p class="ctalede" data-k="ctaLede">Tell us what happened and what you need to achieve. If we are not the right firm for it, we will say so and point you to someone who is.</p>
+
+        <ol class="next">
+          <li><span class="nn">01</span><div><b data-k="n1t">We read it the same day</b><p data-k="n1b">Enquiries reaching us before 17:00 Istanbul time are reviewed that day.</p></div></li>
+          <li><span class="nn">02</span><div><b data-k="n2t">Conflict check</b><p data-k="n2b">We confirm we are able to act before you send anything confidential.</p></div></li>
+          <li><span class="nn">03</span><div><b data-k="n3t">A call with the partner who would run it</b><p data-k="n3b">Not an intake team. The lawyer who would handle the matter.</p></div></li>
+        </ol>
+
+        <div class="direct">
+          <h5 data-k="dirH">DIRECT</h5>
+          <a class="uline" href="mailto:info@uluturk.av.tr">info@uluturk.av.tr</a>
+          <a class="uline" href="tel:+902126932626">+90 212 693 26 26</a>
+          <a class="uline" href="https://www.linkedin.com/company/uluturk/">LinkedIn</a>
+          <address class="dirAdr">Papirus Plaza<br>Merkez Mah. Ayazma Cad. No: 37/117<br>34406 Kağıthane · Istanbul, Türkiye</address>
+          <p class="dirNote" data-k="dirN">Monday – Friday · 09:00 – 18:00 (GMT+3)</p>
+        </div>
+      </div>
+
+      <div class="formwrap">
+        <div class="form" id="form">
+          <div><label data-k="fName">NAME</label><input type="text" id="fn"></div>
+          <div><label data-k="fOrg">ORGANISATION</label><input type="text" id="fo"></div>
+          <div><label data-k="fMail">EMAIL</label><input type="email" id="fe"></div>
+          <div><label data-k="fArea">MATTER TYPE</label>
+            <div class="selwrap"><select id="fa"></select></div>
+          </div>
+          <div class="full"><label data-k="fMsg">OUTLINE</label><textarea id="fm"></textarea></div>
+          <button class="submit full" id="fs" data-k="fSend">SEND ENQUIRY</button>
+          <p class="formnote full" data-k="fNote">Sending an enquiry does not create a lawyer–client relationship. Please do not include confidential information until we have completed a conflict check and confirmed we are able to act.</p>
+        </div>
+      </div>
     </div>
     <div class="note">
       <b>Ne değişti.</b> Mevcut ana sayfada fiziksel adres yok; Mondaq profilinde Papirus Plaza
-      adresi kayıtlı. Bu tutarsızlık hem güven sinyalini hem de arama sistemlerinin büroyu tek
-      varlık olarak tanımasını zayıflatıyor. Adres siteye eklendi, işaretlemedekiyle birebir
-      aynı yazıldı. Çalışma saatleri GMT+3 belirtilerek verildi — yurt dışından arayan için gerekli.
+      adresi kayıtlı. Adres siteye eklendi ve işaretlemedekiyle birebir aynı yazıldı. Çalışma
+      saatleri GMT+3 belirtilerek verildi — yurt dışından arayan için gerekli.
+      <br><br>
+      <b>İletişim tek yerde toplandı.</b> Önceden bu bölüm sadece bilgi listesiydi ve footer aynı
+      bilgileri tekrarlıyordu; sayfa iki footer'la bitiyor gibi duruyordu. Artık burada eyleme
+      dönük tek bir iletişim alanı var, footer ise gezinme ve uzmanlık bağlantılarını taşıyor.
+      Alt sayfalardaki çağrılar da forma buraya yönlendiriyor — site genelinde tek form, tek adres.
     </div>
   </div>
 </section>
@@ -946,52 +983,11 @@ body.audit .src{display:block}
     <div class="wrap" id="pgBody"></div>
   </section>
 
-  <section class="ctas">
+  <section class="ctaband">
     <div class="wrap">
-      <div class="head"><h2 id="pgCta">Talk to us about a matter</h2><span class="tiny">ISTANBUL</span></div>
-
-      <div class="ctagrid">
-        <div class="ctaside">
-          <p class="ctalede" data-k="ctaLede">Tell us what happened and what you need to achieve. If we are not the right firm for it, we will say so and point you to someone who is.</p>
-
-          <ol class="next">
-            <li><span class="nn">01</span><div><b data-k="n1t">We read it the same day</b><p data-k="n1b">Enquiries reaching us before 17:00 Istanbul time are reviewed that day.</p></div></li>
-            <li><span class="nn">02</span><div><b data-k="n2t">Conflict check</b><p data-k="n2b">We confirm we are able to act before you send anything confidential.</p></div></li>
-            <li><span class="nn">03</span><div><b data-k="n3t">A call with the partner who would run it</b><p data-k="n3b">Not an intake team. The lawyer who would handle the matter.</p></div></li>
-          </ol>
-
-          <div class="direct">
-            <h5 data-k="dirH">DIRECT</h5>
-            <a class="uline" href="mailto:info@uluturk.av.tr">info@uluturk.av.tr</a>
-            <a class="uline" href="tel:+902126932626">+90 212 693 26 26</a>
-            <p class="dirNote" data-k="dirN">Papirus Plaza, Kağıthane · Istanbul · GMT+3</p>
-          </div>
-        </div>
-
-        <div class="formwrap">
-          <div class="form" id="form">
-            <div><label data-k="fName">NAME</label><input type="text" id="fn"></div>
-            <div><label data-k="fOrg">ORGANISATION</label><input type="text" id="fo"></div>
-            <div><label data-k="fMail">EMAIL</label><input type="email" id="fe"></div>
-            <div><label data-k="fArea">MATTER TYPE</label>
-              <div class="selwrap"><select id="fa"></select></div>
-            </div>
-            <div class="full"><label data-k="fMsg">OUTLINE</label><textarea id="fm"></textarea></div>
-            <button class="submit full" id="fs" data-k="fSend">SEND ENQUIRY</button>
-            <p class="formnote full" data-k="fNote">Sending an enquiry does not create a lawyer–client relationship. Please do not include confidential information until we have completed a conflict check and confirmed we are able to act.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="note">
-        <b>Form kasıtlı olarak kısa.</b> Kurumsal hukuk müvekkili uzun form doldurmaz. Dört alan
-        ve bir açıklama yeterli; “dosya tipi” alanı gelen talebi doğru ortağa yönlendiriyor ve
-        hangi uzmanlık sayfasından gelindiyse otomatik seçili geliyor.
-        <br><br>
-        Soldaki üç adım bilinçli: kurumsal müvekkilin form doldurmadan önce bilmek istediği tek şey
-        “ne zaman ve kim dönecek”. Menfaat çatışması kaydı ise hem meslek kuralları hem güven açısından
-        uluslararası büroların standart uygulamasıdır.
-      </div>
+      <h2 id="pgCta">Talk to us about a matter</h2>
+      <p id="pgCtaB">Tell us what happened and what you need to achieve.</p>
+      <button class="openbtn" id="pgCtaBtn">CONTACT →</button>
     </div>
   </section>
 </div><!-- /viewPage -->
@@ -1021,14 +1017,13 @@ body.audit .src{display:block}
         <a href="#contact" data-k="nav5">Contact</a>
       </div>
       <div class="fcol">
-        <h5 data-k="fOffice">OFFICE</h5>
-        <address>Papirus Plaza<br>Merkez Mah. Ayazma Cad. No: 37/117<br>34406 Kağıthane<br>Istanbul, Türkiye</address>
-      </div>
-      <div class="fcol">
-        <h5 data-k="fReach">REACH US</h5>
-        <a href="mailto:info@uluturk.av.tr">info@uluturk.av.tr</a>
-        <a href="tel:+902126932626">+90 212 693 26 26</a>
-        <a href="https://www.linkedin.com/company/uluturk/">LinkedIn</a>
+        <h5 data-k="fPr">PRACTICE</h5>
+        <a href="#" class="fpa" data-i="0">Construction &amp; Infrastructure</a>
+        <a href="#" class="fpa" data-i="1">Energy &amp; Natural Resources</a>
+        <a href="#" class="fpa" data-i="2">International Arbitration</a>
+        <a href="#" class="fpa" data-i="3">Shipping &amp; Admiralty</a>
+        <a href="#" class="fpa" data-i="4">Commodities &amp; Trade</a>
+        <a href="#" class="fpa" data-i="5">Enforcement</a>
       </div>
     </div>
     <div class="fbot">
@@ -1129,7 +1124,7 @@ var TR={
  n1t:"Aynı gün okuruz",n1b:"İstanbul saatiyle 17:00'den önce ulaşan başvurular aynı gün değerlendirilir.",
  n2t:"Menfaat çatışması kontrolü",n2b:"Siz gizli bir şey göndermeden önce görev alabileceğimizi teyit ederiz.",
  n3t:"Dosyayı yürütecek ortakla görüşme",n3b:"Karşılama ekibiyle değil, işi fiilen yürütecek avukatla.",
- phCap:"PORTRE",dirH:"DOĞRUDAN",dirN:"Papirus Plaza, Kağıthane · İstanbul · GMT+3",
+ phCap:"PORTRE",fPr:"UZMANLIK",dirH:"DOĞRUDAN",dirN:"Pazartesi – Cuma · 09:00 – 18:00 (GMT+3)",
  fNote:"Form gönderimi avukat–müvekkil ilişkisi kurmaz. Menfaat çatışması kontrolü tamamlanıp görev alabileceğimizi teyit edene kadar lütfen gizli bilgi paylaşmayın.",
  epOpen:"TAM SAYFAYI AÇ"
 };
@@ -1148,6 +1143,7 @@ function setLang(l){
   document.getElementById('bTR').setAttribute('aria-pressed', l==='tr');
   render(current);
   fillMatter();
+  paintFooterPractice();
   if(!vPage.hidden) renderPage(pgIdx);
   cur=-1; if(typeof paintRail==='function') paintRail();
 }
@@ -1441,10 +1437,12 @@ tr:[
 var PGL={
  en:{back:"BACK TO PRACTICE",home:"Home",practice:"Practice",short:"THE SHORT ANSWER",
      steps:"How it works",stepsT:"THREE STAGES",terms:"What we handle",faq:"Questions",
-     rel:"Related insight",cta:"Talk to us about a matter"},
+     rel:"Related insight",cta:"Talk to us about a matter",
+     ctaB:"Tell us what happened and what you need to achieve. If we are not the right firm for it, we will say so.",ctaBtn:"CONTACT"},
  tr:{back:"UZMANLIK ALANLARINA DÖN",home:"Ana sayfa",practice:"Uzmanlık",short:"KISA CEVAP",
      steps:"Süreç nasıl işler",stepsT:"ÜÇ AŞAMA",terms:"Yürüttüğümüz işler",faq:"Sorular",
-     rel:"İlgili yayınlar",cta:"Dosyanızı görüşelim"}
+     rel:"İlgili yayınlar",cta:"Dosyanızı görüşelim",
+     ctaB:"Ne olduğunu ve neyi başarmanız gerektiğini yazın. Bu iş için doğru büro değilsek bunu söyleriz.",ctaBtn:"İLETİŞİM"}
 };
 
 var REL={
@@ -1489,8 +1487,9 @@ function renderPage(i){
 
   document.getElementById('pgBody').innerHTML=h;
   document.getElementById('pgCta').textContent=L.cta;
-  var sel=document.getElementById('fa');
-  if(sel){ sel.innerHTML=''; fillMatter(); sel.selectedIndex=i; }
+  document.getElementById('pgCtaB').textContent=L.ctaB;
+  document.getElementById('pgCtaBtn').textContent=L.ctaBtn+' →';
+  var sel=document.getElementById('fa'); if(sel) sel.selectedIndex=i;
   document.querySelectorAll('#viewPage .toHome').forEach(function(a){
     a.addEventListener('click',function(e){e.preventDefault();go('home');});
   });
@@ -1673,6 +1672,20 @@ tick(); setInterval(tick,20000);
 document.getElementById('totop').addEventListener('click',function(){
   window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
 });
+
+document.getElementById('pgCtaBtn').addEventListener('click',function(){
+  go('home');
+  var t=document.getElementById('contact');
+  if(t) setTimeout(function(){t.scrollIntoView({behavior:reduce?'auto':'smooth'});},40);
+});
+document.querySelectorAll('.fpa').forEach(function(a){
+  a.addEventListener('click',function(e){e.preventDefault();go('page',+a.dataset.i);});
+});
+function paintFooterPractice(){
+  var set=PR[lang]||PR.en;
+  document.querySelectorAll('.fpa').forEach(function(a){a.textContent=set[+a.dataset.i].n;});
+}
+paintFooterPractice();
 
 /* ---------- audit ---------- */
 var t=document.getElementById('t');
