@@ -310,6 +310,19 @@ footer{border-top:1px solid var(--hair);padding:clamp(56px,7vh,86px) 0 0;color:v
 .flegal{display:flex;gap:18px;flex-wrap:wrap}
 .flegal a{transition:color .35s var(--ease)}
 .flegal a:hover{color:var(--brass)}
+.credit{display:flex;align-items:center;gap:11px;font-size:10.5px;letter-spacing:.14em;
+  color:#4C5255;transition:color .4s var(--ease);white-space:nowrap}
+.credit:hover{color:var(--brass)}
+.credit .cl{display:flex;align-items:center;gap:8px}
+.credit img{height:16px;width:auto;display:block;opacity:.6;
+  transition:opacity .4s var(--ease)}
+.credit:hover img{opacity:1}
+.credit .cw{font-family:"Jost",sans-serif;font-weight:500;font-size:12px;
+  letter-spacing:.24em;color:#7C8286;transition:color .4s var(--ease)}
+.credit:hover .cw{color:var(--brass)}
+.credit .cd{width:3px;height:3px;background:currentColor;transform:rotate(45deg);opacity:.6}
+@media(max-width:760px){.credit{width:100%;justify-content:flex-start;order:2}}
+
 .totop{background:none;border:none;color:#565C60;cursor:pointer;font-family:"Jost",sans-serif;
   font-size:10px;letter-spacing:.24em;display:flex;align-items:center;gap:9px;padding:0;
   transition:color .35s var(--ease)}
@@ -1122,6 +1135,15 @@ body.audit .src{display:block}
         <a href="#" data-k="fL1">Legal notice</a><a href="#" data-k="fL2">Privacy</a>
         <a href="#" data-k="fL3">Cookies</a><a href="#">KVKK</a>
       </span>
+      <a class="credit" href="https://arvo-os.com/hizmetler/web-sitesi-tasarimi"
+         target="_blank" rel="noopener">
+        <span data-k="credit">Designed by</span>
+        <span class="cl">
+          <img id="crLogo" src="https://arvo-os.com/arvoos-logo.png" alt="ArvoOS"
+               loading="lazy" decoding="async" width="72" height="15">
+          <span class="cw" id="crWord" hidden>ArvoOS</span>
+        </span>
+      </a>
       <button class="totop" id="totop"><i></i><span data-k="fTop">TOP</span></button>
     </div>
   </div>
@@ -1182,7 +1204,7 @@ var TR={
  search:"ARA",forums:"KURUMLAR VE KURALLAR",c4:"E-POSTA",
  fTag:"Türkiye içinde ve dışında uluslararası müteahhitler, enerji yatırımcıları, gemi sahipleri ve emtia tüccarları için uyuşmazlık ve proje hukuku.",
  fBar:"İSTANBUL BAROSU",fNav:"SAYFALAR",fOffice:"OFİS",fReach:"BİZE ULAŞIN",
- fL1:"Yasal uyarı",fL2:"Gizlilik",fL3:"Çerezler",fTop:"YUKARI",epBack:"UZMANLIK ALANLARINA DÖN",epCrumb:"Tenfiz",
+ credit:"Tasarım",fL1:"Yasal uyarı",fL2:"Gizlilik",fL3:"Çerezler",fTop:"YUKARI",epBack:"UZMANLIK ALANLARINA DÖN",epCrumb:"Tenfiz",
  epH1:"Yabancı mahkeme ve hakem kararlarının Türkiye'de tenfizi",
  epLede:"Bir karar, ancak tahsil edebildiğiniz kadar değerlidir. Türkiye ayağını biz yürütüyoruz: borçlu malvarlığını kaçırmadan önce güvence altına almak, sonra yabancı kararı icra edilebilir bir Türk kararına dönüştürmek.",
  epShortL:"KISA CEVAP",
@@ -1777,6 +1799,12 @@ function tick(){
   }catch(e){}
 }
 tick(); setInterval(tick,20000);
+
+(function(){
+  var lg=document.getElementById('crLogo'),wd=document.getElementById('crWord');
+  if(!lg) return;
+  lg.addEventListener('error',function(){lg.remove();wd.hidden=false;});
+})();
 
 document.getElementById('totop').addEventListener('click',function(){
   window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
