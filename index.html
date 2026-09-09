@@ -152,9 +152,8 @@ h1{font-size:clamp(38px,6.6vw,112px);max-width:15ch;letter-spacing:-.015em}
 
 section{padding:clamp(78px,11vh,175px) 0}
 .head{display:flex;justify-content:space-between;align-items:baseline;gap:28px;
-  border-bottom:1px solid var(--hair);padding-bottom:22px;margin-bottom:68px;flex-wrap:wrap;
-  max-width:1180px}
-.head h2{font-size:clamp(30px,4.2vw,62px)}
+  border-bottom:1px solid var(--hair);padding-bottom:22px;margin-bottom:68px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,4.2vw,62px);max-width:18ch}
 
 /* practice */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(60px,7vw,110px);align-items:start}
@@ -244,23 +243,6 @@ section{padding:clamp(78px,11vh,175px) 0}
   font-family:"Cormorant Garamond",serif;font-size:19px;margin-bottom:4px}
 .auth{font-size:12.5px;color:var(--fog);border-top:1px solid var(--hair);
   margin-top:38px;padding-top:22px;line-height:1.75}
-
-/* AI visibility */
-.ai{background:var(--panel)}
-.aibox{border:1px solid var(--hair);background:var(--void);padding:clamp(22px,4vw,38px);
-  max-width:760px}
-.aiq{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--hair);
-  padding-bottom:18px;margin-bottom:24px}
-.aiq .who{font-size:10.5px;letter-spacing:.2em;color:var(--fog);white-space:nowrap}
-.aiq p{margin:0;font-family:"Cormorant Garamond",serif;font-size:21px}
-.aia p{color:#B5BABA;font-size:15.5px}
-.aia .cite{display:inline-block;border-bottom:1px solid var(--brass);color:var(--brass)}
-.aisrc{margin-top:24px;padding-top:18px;border-top:1px solid var(--hair);
-  font-size:11.5px;letter-spacing:.06em;color:var(--fog)}
-.aisrc b{color:var(--brass);font-weight:300}
-.cursor{display:inline-block;width:7px;height:16px;background:var(--brass);
-  vertical-align:-2px;animation:blink 1.1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
 
 details{border-bottom:1px solid var(--hair);padding:22px 0}
 summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:26px;
@@ -467,7 +449,6 @@ body.ready .ln i,body.ready .lede,body.ready .hero-rule{animation-play-state:run
 .pane{transition:opacity .4s var(--ease)}
 
 /* kart ve panel derinliği */
-.aibox{box-shadow:inset 0 1px 0 rgba(237,235,230,.05)}
 
 @media(prefers-reduced-motion:reduce){
   .ove{display:none}
@@ -788,35 +769,7 @@ body.audit .src{display:block}
   </div>
 </section>
 
-<section class="ai">
-  <div class="wrap">
-    <div class="head rv"><h2 data-k="s5">Found in AI answers</h2><span class="tiny" data-k="s5t">GEO</span></div>
-    <div class="aibox rv">
-      <div class="aiq">
-        <span class="who">PROMPT</span>
-        <p data-k="aiq">"Can I enforce an LCIA award against a Turkish company?"</p>
-      </div>
-      <div class="aia">
-        <p><span id="aitext"></span><span class="cursor"></span></p>
-      </div>
-      <div class="aisrc">SOURCES · <b>uluturk.av.tr/en/enforcement</b> · practicallaw · newyorkconvention1958.org</div>
-    </div>
-    <div class="note">
-      <b>GEO'nun somut hali.</b> Bir ajans “yapay zekâ görünürlüğü sağlıyoruz” dediğinde
-      müşterinin kafasında bir görüntü oluşmaz. Bu blok, hedeflenen çıktının kendisi:
-      Londra'daki bir avukat ChatGPT'ye sorduğunda, cevabın içinde bu büronun kaynak
-      gösterilmesi.
-      <br><br>
-      Bunun olması için gereken üç şey sitede zaten uygulandı: kendi başına anlam taşıyan
-      kısa cevap blokları, mevzuat ve sözleşme adlarının açık verilmesi, ve varlık
-      tutarlılığı. Aylık raporda bu sorguların takibi yapılır — hangi sorularda çıkıyoruz,
-      hangilerinde rakip büro çıkıyor.
-      <br><br>
-      Sunumda net olun: bu bir temsildir, gerçek bir ChatGPT ekran görüntüsü değil.
-      Hedefi gösterir, mevcut durumu değil.
-    </div>
-  </div>
-</section>
+
 
 <section>
   <div class="wrap">
@@ -911,74 +864,20 @@ body.audit .src{display:block}
 <div id="viewPage" hidden>
   <div class="ptop">
     <div class="wrap">
-      <a class="back" href="#" id="backLink">← <span data-k="epBack">BACK TO PRACTICE</span></a>
-      <div class="crumb"><a href="#" class="toHome">Home</a> · <a href="#" class="toHome">Practice</a> · <span data-k="epCrumb">Enforcement</span></div>
-      <h1 data-k="epH1">Enforcement of foreign judgments and arbitral awards in Türkiye</h1>
-      <p class="lede2" data-k="epLede">An award is worth what you can collect on it. We handle the Turkish end: securing assets before the debtor moves them, then converting a foreign decision into an enforceable Turkish one.</p>
+      <a class="back" href="#" id="backLink">← <span id="pgBack">BACK TO PRACTICE</span></a>
+      <div class="crumb" id="pgCrumb"></div>
+      <h1 id="pgH1"></h1>
+      <p class="lede2" id="pgLede"></p>
     </div>
   </div>
 
   <section>
-    <div class="wrap">
-      <div class="ans" style="margin-top:0">
-        <div class="lbl" data-k="epShortL">THE SHORT ANSWER</div>
-        <p data-k="epShort">Türkiye has been a party to the New York Convention since 1992, with the reciprocity and commercial reservations. A foreign arbitral award is enforced by application to the commercial court where the debtor is domiciled. Interim attachment can be obtained first, and usually should be.</p>
-      </div>
-
-      <div class="head" style="margin-top:70px"><h2 data-k="epStepsH">How it works</h2><span class="tiny" data-k="epStepsT">FOUR STAGES</span></div>
-      <div class="steps">
-        <div class="step"><div class="num">01</div><div>
-          <h4 data-k="epS1t">Assess the award against the reservations</h4>
-          <p data-k="epS1b">Whether the award qualifies under the Convention, whether the seat state is reciprocating, and whether the subject matter is commercial in the Turkish sense. Defects found here are cheaper than defects found at the hearing.</p></div></div>
-        <div class="step"><div class="num">02</div><div>
-          <h4 data-k="epS2t">Locate and secure assets</h4>
-          <p data-k="epS2b">Asset tracing across Turkish registries, followed by interim attachment. Filed before the debtor is on notice wherever the facts allow it.</p></div></div>
-        <div class="step"><div class="num">03</div><div>
-          <h4 data-k="epS3t">Apply for recognition and enforcement</h4>
-          <p data-k="epS3b">Application to the commercial court at the debtor's domicile, with certified translations and the documents the Convention requires. We anticipate the public policy objection, because it is the one that is always raised.</p></div></div>
-        <div class="step"><div class="num">04</div><div>
-          <h4 data-k="epS4t">Convert into execution</h4>
-          <p data-k="epS4b">Once enforceable, the decision goes to execution proceedings: garnishment, attachment and sale. Collection, not paperwork, is the point of the exercise.</p></div></div>
-      </div>
-
-      <div class="head" style="margin-top:70px"><h2 data-k="epTermsH">What we handle</h2></div>
-      <div class="chips">
-        <b>New York Convention 1958</b><b>Recognition &amp; enforcement</b><b>Interim attachment</b>
-        <b>Asset tracing</b><b>Foreign court judgments</b><b>Public policy objections</b>
-        <b>Execution proceedings</b><b>Insolvency-adjacent recovery</b>
-      </div>
-
-      <div class="head" style="margin-top:70px"><h2 data-k="epFaqH">Questions</h2></div>
-      <details open><summary data-k="epQ1">How long does enforcement take in Türkiye?</summary>
-        <p data-k="epA1">A first-instance enforcement decision commonly takes between eight and eighteen months, depending on the court's docket and whether the debtor appeals. Interim attachment, by contrast, can be obtained within days and is what preserves the value of the claim in the meantime.</p></details>
-      <details><summary data-k="epQ2">What is the most common ground of objection?</summary>
-        <p data-k="epA2">Public policy. Turkish courts read it narrowly and it rarely succeeds on its own, but it is raised in almost every case and should be answered in the application rather than left to the reply.</p></details>
-      <details><summary data-k="epQ3">Can a foreign court judgment be enforced the same way?</summary>
-        <p data-k="epA3">No. Foreign judgments are enforced under Turkish private international law rules rather than the Convention, and reciprocity with the rendering state must be established. The evidential burden is different and usually heavier.</p></details>
-
-      <div class="head" style="margin-top:70px"><h2 data-k="epRelH">Related insight</h2></div>
-      <div class="rel">
-        <a href="#"><span class="d">02 MAR 2026</span><h4 data-k="epR1">Pathological arbitration clauses in Türkiye-connected contracts, and how courts read them</h4></a>
-        <a href="#"><span class="d">14 APR 2026</span><h4 data-k="epR2">Arresting a vessel in a Turkish port: what security the court will expect</h4></a>
-      </div>
-
-      <div class="note">
-        <b>Neden alt sayfa da yapıldı.</b> Demoların çoğu ana sayfada biter. Oysa arama trafiği
-        ana sayfaya değil, alt sayfalara gelir. Bu sayfa bunun şablonu: kendi H1'i, kendi
-        breadcrumb'ı, açılışta kısa cevap bloğu, süreç adımları, terim listesi, kendi SSS'i
-        ve ilgili yayınlara iç bağlantı.
-        <br><br>
-        Üretimde bu sayfa <code>/en/enforcement</code> adresinde durur, Türkçesi
-        <code>/tenfiz</code> adresinde, ikisi <code>hreflang</code> ile bağlanır. Sayfaya
-        ayrıca <code>Service</code>, <code>FAQPage</code> ve <code>BreadcrumbList</code>
-        işaretlemesi eklenir. Altı uzmanlık alanının her biri bu şablonla üretilir.
-      </div>
-    </div>
+    <div class="wrap" id="pgBody"></div>
   </section>
 
   <section style="background:var(--ink)">
     <div class="wrap">
-      <div class="head"><h2 data-k="epCtaH">Talk to us about a matter</h2><span class="tiny">ISTANBUL</span></div>
+      <div class="head"><h2 id="pgCta">Talk to us about a matter</h2><span class="tiny">ISTANBUL</span></div>
       <div class="form" id="form">
         <div><label data-k="fName">NAME</label><input type="text" id="fn"></div>
         <div><label data-k="fOrg">ORGANISATION</label><input type="text" id="fo"></div>
@@ -1095,8 +994,6 @@ var TR={
  l5a:"Alt yüklenici uyumu",l5b:"Alt sözleşmelerin ana sözleşmeyle aynı vergi kaydını taşıyıp taşımadığı.",
  l6a:"Finansal model",l6b:"Nakit akışı modelinin hâlâ %5 varsaydığı ve bunun kredi taahhütlerine etkisi.",
  basis:"Dayanak: 11344 sayılı Cumhurbaşkanı Kararı, 19 Mayıs 2026 tarihli 33258 sayılı Resmî Gazete · 193 sayılı Gelir Vergisi Kanunu m. 42 ve 94 · 5520 sayılı Kurumlar Vergisi Kanunu m. 15 ve 30.<br>Bu metin genel bilgilendirme amaçlıdır, somut bir olaya ilişkin hukuki görüş değildir.",
- s5:"Yapay zekâ cevaplarında",s5t:"GEO",
- aiq:"“Bir LCIA kararını Türk şirkete karşı tenfiz edebilir miyim?”",
  s6:"Bize sorulanlar",s6t:"YABANCI MESLEKTAŞLAR İÇİN",
  q1:"Bir LCIA kararı Türkiye'deki malvarlığına karşı tenfiz edilebilir mi?",
  a1:"Evet. Türkiye 1992'den bu yana New York Sözleşmesi'ne taraftır; karşılıklılık ve ticari nitelik çekinceleri geçerlidir. Tenfiz, borçlunun yerleşim yerindeki ticaret mahkemesinden istenir ve duruşma öncesinde malvarlığını korumak için ihtiyati haciz talep edilebilir.",
@@ -1143,10 +1040,6 @@ var TR={
 var EN={}, lang='en';
 document.querySelectorAll('[data-k]').forEach(function(el){EN[el.dataset.k]=el.innerHTML;});
 
-var AI={
- en:"Yes, subject to the New York Convention, to which Türkiye has been a party since 1992. The application is made to the commercial court where the debtor is domiciled, and Turkish counsel note that interim attachment can be sought to preserve assets before the enforcement hearing.",
- tr:"Evet. Türkiye 1992'den bu yana New York Sözleşmesi'ne taraf. Başvuru, borçlunun yerleşim yerindeki ticaret mahkemesine yapılır; Türk hukukçular tenfiz duruşmasından önce malvarlığını korumak için ihtiyati haciz talep edilebileceğini belirtiyor."
-};
 
 function setLang(l){
   lang=l;
@@ -1158,7 +1051,7 @@ function setLang(l){
   document.getElementById('bEN').setAttribute('aria-pressed', l==='en');
   document.getElementById('bTR').setAttribute('aria-pressed', l==='tr');
   render(current);
-  typeAI();
+  if(!vPage.hidden) renderPage(pgIdx);
   cur=-1; if(typeof paintRail==='function') paintRail();
 }
 document.getElementById('bEN').addEventListener('click',function(){setLang('en');});
@@ -1270,9 +1163,9 @@ function render(i){
   pane.innerHTML='<div class="lbl">'+d.l+'</div><div class="txt">'+d.t+'</div>'+
     '<div class="terms">'+d.k.map(function(k){return '<b>'+k+'</b>';}).join('')+
     '</div><div class="url">'+d.u+'</div>'+
-    (i===5?'<button class="openbtn" id="openPage">'+openLbl+' →</button>':'');
+    '<button class="openbtn" id="openPage">'+openLbl+' →</button>';
   var ob=document.getElementById('openPage');
-  if(ob) ob.addEventListener('click',function(){go('page');});
+  if(ob) ob.addEventListener('click',function(){go('page',i);});
   if(!reduce){pane.classList.remove('fade');void pane.offsetWidth;pane.classList.add('fade');}
 }
 function select(i){
@@ -1297,33 +1190,224 @@ fb.forEach(function(b){
   });
 });
 
-/* ---------- AI typing ---------- */
-var tgt=document.getElementById('aitext'),timer=null;
-function typeAI(){
-  var s=AI[lang]||AI.en;
-  clearInterval(timer); tgt.textContent='';
-  if(reduce){tgt.textContent=s;return;}
-  var i=0;
-  timer=setInterval(function(){
-    tgt.textContent=s.slice(0,++i);
-    if(i>=s.length) clearInterval(timer);
-  },17);
+
+
+/* ---------- alt sayfa içerikleri (6 uzmanlık alanı) ---------- */
+var PAGES={
+en:[
+{crumb:"Construction",
+ h1:"Construction and infrastructure disputes in Türkiye",
+ lede:"We act on the claims that decide a project's margin — time, money, and the security standing behind both.",
+ short:"Most construction claims in Türkiye turn on two documents: the programme and the notice. Whether an extension of time survives depends less on the delay itself than on whether it was notified in the form and within the period the contract requires.",
+ steps:[
+ {t:"Read the contract before the facts",b:"Which FIDIC form, which particular conditions, what notice periods and time bars apply. This determines what can still be claimed and what has already been lost."},
+ {t:"Build the delay record",b:"Programme analysis, contemporaneous records and correspondence. A claim is only ever as strong as the record standing behind it."},
+ {t:"Choose the forum deliberately",b:"Turkish commercial courts, ISTAC or ICC. The choice affects timetable, cost and how easily the outcome can be enforced."}],
+ faq:[
+ {q:"Will a Turkish court restrain a call on an on-demand bond?",a:"Rarely, and only on narrow grounds. The bond is treated as independent of the underlying contract, so a court will normally intervene only where the call is clearly abusive and that abuse is provable from documents alone."},
+ {q:"Does a FIDIC time bar bind under Turkish law?",a:"Generally yes, but Turkish law tests such clauses against good faith. A time bar invoked opportunistically, where the employer suffered no prejudice from late notice, may not be enforced as written."}]},
+
+{crumb:"Energy",
+ h1:"Energy projects, licensing and offtake disputes",
+ lede:"From the licence application to the argument about what the offtaker owes when the plant does not run.",
+ short:"Most energy disputes in Türkiye are not about technology. They are about the allocation of regulatory risk: who carries the cost when a tariff, a licence condition or a grid rule changes after financial close.",
+ steps:[
+ {t:"Map the regulatory exposure",b:"Licence conditions, EPDK obligations and the tariff mechanism that actually applies to the project as built."},
+ {t:"Test the contract against change",b:"Whether the EPC and offtake agreements move risk symmetrically when law or tariff changes, or only in one direction."},
+ {t:"Preserve the finance case",b:"Lender security, step-in rights and covenant headroom, addressed before positions harden and waivers become expensive."}],
+ faq:[
+ {q:"Can a generation licence be transferred with the project?",a:"In practice the licence stays with the company, so transactions are structured as share transfers. Regulatory approval requirements and shareholding thresholds should be checked before signing, not after."},
+ {q:"Who bears the cost of a mid-project tariff change?",a:"It depends entirely on the change-in-law clause. Many contracts contain one-way clauses covering increases only, which leaves the developer exposed when the change runs the other way."}]},
+
+{crumb:"Arbitration",
+ h1:"International arbitration with a Turkish nexus",
+ lede:"Counsel in ICC, LCIA and ISTAC proceedings, and the Turkish law advice that decides whether an award survives challenge at home.",
+ short:"An arbitration clause is the cheapest thing to get right and the most expensive thing to get wrong. Most of the clauses we are asked to repair were drafted in the final hour of a negotiation.",
+ steps:[
+ {t:"Test the clause",b:"Seat, institution, language, number of arbitrators and scope. Defects are curable before a dispute arises and frequently fatal afterwards."},
+ {t:"Run the proceeding",b:"Pleadings, evidence and hearings, together with the Turkish law questions that arise inside the arbitration itself."},
+ {t:"Defend or attack the award",b:"Set-aside applications before Turkish courts, and enforcement wherever the award is actually to be collected."}],
+ faq:[
+ {q:"On what grounds can an award seated in Türkiye be set aside?",a:"The grounds mirror the New York Convention: invalid agreement, improper constitution of the tribunal, excess of mandate, procedural unfairness, non-arbitrability and public policy. The application period is short and applied strictly."},
+ {q:"Can Turkish courts grant interim relief during an arbitration?",a:"Yes. An arbitration agreement does not prevent a party from seeking interim measures or attachment from a Turkish court, and doing so does not waive the arbitration clause."}]},
+
+{crumb:"Shipping",
+ h1:"Shipping, cargo claims and ship arrest in Turkish ports",
+ lede:"Turkish ports are where a maritime claim becomes leverage. We move quickly when they are, and defend when the arrest is on the other side.",
+ short:"An arrest application supported by proper documents can be heard within days, sometimes the same day. The practical questions are whether the claim qualifies as a maritime claim under the Turkish Commercial Code, and what counter-security the court will require.",
+ steps:[
+ {t:"Qualify the claim",b:"Whether it falls within the enumerated maritime claims. Everything that follows depends on this single question."},
+ {t:"File where the vessel is",b:"Application to the court at the port, with counter-security prepared in advance and ready to post on the day."},
+ {t:"Negotiate release",b:"Club letters, bank guarantees and the terms on which security is substituted for the ship herself."}],
+ faq:[
+ {q:"How much counter-security will the court require?",a:"The court sets it, commonly as a proportion of the claim. It must be available at filing; delay at this stage is what allows vessels to sail."},
+ {q:"Can a sister ship be arrested?",a:"Yes, in defined circumstances, where ownership both at the time the claim arose and at the time of arrest satisfies the statutory test."}]},
+
+{crumb:"Commodities",
+ h1:"Commodity contracts, documentary credits and sanctions",
+ lede:"Cargo, documents and sanctions — the three places a trade goes wrong.",
+ short:"In commodity disputes the contract is usually a standard form, so the argument is almost always about the documents. Whether a rejection stands often depends on a certificate, a notice, and the hour at which each was given.",
+ steps:[
+ {t:"Fix the contract terms",b:"Which standard form, which incorporated rules, which Incoterm, and where risk in the cargo actually passed."},
+ {t:"Work the documents",b:"Certificates, notices and the presentation under the credit. Discrepancies, not commercial merits, decide most outcomes."},
+ {t:"Clear the compliance question",b:"Sanctions and export-control screening of counterparties, vessels and routes, before a position is taken rather than after."}],
+ faq:[
+ {q:"Is a GAFTA award enforceable in Türkiye?",a:"Yes, under the New York Convention like any other foreign award, provided the arbitration agreement and the award itself satisfy the Convention's requirements."},
+ {q:"Does a discrepant presentation always defeat a credit claim?",a:"No. Much depends on whether the discrepancy was notified within the period the UCP allows, and whether the bank's refusal notice met the required form."}]},
+
+{crumb:"Enforcement",
+ h1:"Enforcement of foreign judgments and arbitral awards in Türkiye",
+ lede:"An award is worth what you can collect on it. We handle the Turkish end: securing assets before the debtor moves them, then converting a foreign decision into an enforceable Turkish one.",
+ short:"Türkiye has been a party to the New York Convention since 1992, with the reciprocity and commercial reservations. A foreign arbitral award is enforced by application to the commercial court where the debtor is domiciled. Interim attachment can be obtained first, and usually should be.",
+ steps:[
+ {t:"Assess the award against the reservations",b:"Whether the award qualifies, whether the seat state is reciprocating, and whether the subject matter is commercial in the Turkish sense. Defects found here are cheaper than defects found at the hearing."},
+ {t:"Locate and secure assets",b:"Asset tracing across Turkish registries, followed by interim attachment, filed before the debtor is on notice wherever the facts allow it."},
+ {t:"Apply, then convert into execution",b:"Application to the commercial court with certified translations, then execution proceedings: garnishment, attachment and sale. Collection, not paperwork, is the point."}],
+ faq:[
+ {q:"How long does enforcement take in Türkiye?",a:"A first-instance decision commonly takes between eight and eighteen months, depending on the court's docket and whether the debtor appeals. Interim attachment, by contrast, can be obtained within days and is what preserves the value of the claim meanwhile."},
+ {q:"Can a foreign court judgment be enforced the same way?",a:"No. Foreign judgments are enforced under Turkish private international law rather than the Convention, and reciprocity with the rendering state must be established. The evidential burden is different and usually heavier."}]}
+],
+tr:[
+{crumb:"İnşaat",
+ h1:"Türkiye'de inşaat ve altyapı uyuşmazlıkları",
+ lede:"Bir projenin kârını belirleyen taleplerde görev alıyoruz: süre, bedel ve ikisinin arkasındaki teminat.",
+ short:"Türkiye'de inşaat taleplerinin çoğu iki belgeye dayanır: iş programı ve ihbar. Bir süre uzatımı talebinin ayakta kalıp kalmayacağı, gecikmenin kendisinden çok, sözleşmenin aradığı biçimde ve süre içinde bildirilip bildirilmediğine bağlıdır.",
+ steps:[
+ {t:"Olaylardan önce sözleşmeyi okumak",b:"Hangi FIDIC formu, hangi özel şartlar, hangi ihbar süreleri ve hak düşürücü süreler geçerli. Hâlâ neyin talep edilebileceğini ve neyin kaybedildiğini bu belirler."},
+ {t:"Gecikme kaydını kurmak",b:"İş programı analizi, eş zamanlı kayıtlar ve yazışmalar. Bir talep, ancak arkasındaki kayıt kadar güçlüdür."},
+ {t:"Forumu bilinçli seçmek",b:"Ticaret mahkemesi, ISTAC ya da ICC. Bu tercih takvimi, maliyeti ve sonucun ne kadar kolay icra edileceğini etkiler."}],
+ faq:[
+ {q:"Türk mahkemesi ilk talepte ödeme garantisinin nakde çevrilmesini durdurur mu?",a:"Nadiren ve dar gerekçelerle. Garanti, asıl sözleşmeden bağımsız sayılır; mahkeme kural olarak yalnızca talebin açıkça kötüniyetli olduğu ve bunun salt belgelerden ispatlanabildiği hâllerde müdahale eder."},
+ {q:"FIDIC sözleşmesindeki hak düşürücü süre Türk hukukunda bağlayıcı mı?",a:"Kural olarak evet, ancak Türk hukuku bu tür kayıtları dürüstlük kuralı süzgecinden geçirir. İşverenin geç ihbardan hiçbir zarar görmediği hâllerde fırsatçı biçimde ileri sürülen bir süre kaydı yazıldığı gibi uygulanmayabilir."}]},
+
+{crumb:"Enerji",
+ h1:"Enerji projeleri, lisans ve satış sözleşmesi uyuşmazlıkları",
+ lede:"Lisans başvurusundan, santral çalışmadığında alıcının ne borçlu olduğu tartışmasına kadar.",
+ short:"Türkiye'deki enerji uyuşmazlıklarının çoğu teknolojiyle ilgili değildir. Asıl mesele düzenleyici riskin paylaşımıdır: finansal kapanıştan sonra bir tarife, lisans şartı veya şebeke kuralı değiştiğinde maliyeti kim üstlenir.",
+ steps:[
+ {t:"Düzenleyici riski çıkarmak",b:"Lisans şartları, EPDK yükümlülükleri ve projeye fiilen uygulanan tarife mekanizması."},
+ {t:"Sözleşmeyi değişime karşı sınamak",b:"EPC ve satış sözleşmelerinin mevzuat ya da tarife değiştiğinde riski çift yönlü mü yoksa tek yönlü mü taşıdığı."},
+ {t:"Finansman kurgusunu korumak",b:"Kredi teminatları, devralma hakları ve taahhüt marjları; taraflar pozisyon sertleştirmeden önce ele alınır."}],
+ faq:[
+ {q:"Üretim lisansı projeyle birlikte devredilebilir mi?",a:"Uygulamada lisans şirkette kaldığı için işlemler pay devri olarak kurgulanır. İzin gereklilikleri ve pay eşikleri imzadan sonra değil önce kontrol edilmelidir."},
+ {q:"Proje ortasındaki tarife değişikliğinin maliyetini kim üstlenir?",a:"Tamamen mevzuat değişikliği kaydına bağlıdır. Birçok sözleşmede yalnızca artışları kapsayan tek yönlü kayıtlar bulunur; değişiklik ters yönde olduğunda yatırımcı korumasız kalır."}]},
+
+{crumb:"Tahkim",
+ h1:"Türkiye bağlantılı uluslararası tahkim",
+ lede:"ICC, LCIA ve ISTAC yargılamalarında vekillik; ve bir kararın Türkiye'de iptal talebine karşı ayakta kalıp kalmayacağını belirleyen Türk hukuku görüşü.",
+ short:"Tahkim şartı, doğru yazıldığında en ucuz; yanlış yazıldığında en pahalı hükümdür. Düzeltmemiz istenen şartların çoğu bir müzakerenin son saatinde kaleme alınmıştır.",
+ steps:[
+ {t:"Şartı sınamak",b:"Tahkim yeri, kurum, dil, hakem sayısı ve kapsam. Kusurlar uyuşmazlık doğmadan önce onarılabilir, sonrasında çoğu zaman onarılamaz."},
+ {t:"Yargılamayı yürütmek",b:"Dilekçeler, deliller ve duruşmalar; tahkimin içinde doğan Türk hukuku sorunlarıyla birlikte."},
+ {t:"Kararı savunmak ya da karşı çıkmak",b:"Türk mahkemeleri önünde iptal davaları ve kararın fiilen tahsil edileceği yerde tenfiz."}],
+ faq:[
+ {q:"Türkiye'de verilen bir karar hangi sebeplerle iptal edilebilir?",a:"Sebepler New York Sözleşmesi ile örtüşür: geçersiz tahkim anlaşması, hakem kurulunun usulsüz oluşumu, yetki aşımı, usule aykırılık, tahkime elverişsizlik ve kamu düzeni. Dava süresi kısadır ve katı biçimde uygulanır."},
+ {q:"Tahkim sürerken Türk mahkemesinden ihtiyati tedbir alınabilir mi?",a:"Evet. Tahkim anlaşması, tarafın Türk mahkemesinden ihtiyati tedbir veya haciz istemesine engel değildir ve bu talep tahkim şartından feragat sayılmaz."}]},
+
+{crumb:"Denizcilik",
+ h1:"Denizcilik, yük alacakları ve Türk limanlarında gemi haczi",
+ lede:"Bir deniz alacağının pazarlık gücüne dönüştüğü yer Türk limanlarıdır. Gerektiğinde hızlı hareket ediyor, karşı tarafta olduğumuzda savunuyoruz.",
+ short:"Belgeleri düzgün hazırlanmış bir ihtiyati haciz talebi günler içinde, kimi zaman aynı gün karara bağlanabilir. Pratikte iki soru vardır: alacak Türk Ticaret Kanunu anlamında deniz alacağı mı, ve mahkeme ne kadar teminat isteyecek.",
+ steps:[
+ {t:"Alacağı nitelendirmek",b:"Sayılan deniz alacakları arasında yer alıp almadığı. Sonraki her adım bu tek soruya bağlıdır."},
+ {t:"Geminin bulunduğu yerde başvurmak",b:"Limandaki mahkemeye başvuru; teminat önceden hazırlanmış ve aynı gün yatırılabilir durumda."},
+ {t:"Serbest bırakmayı müzakere etmek",b:"Kulüp mektupları, banka teminatları ve teminatın geminin yerine geçeceği şartlar."}],
+ faq:[
+ {q:"Mahkeme ne kadar teminat ister?",a:"Teminatı mahkeme belirler, genellikle alacağın bir oranı olarak. Başvuru anında hazır olmalıdır; bu aşamadaki gecikme geminin limandan ayrılmasına yol açar."},
+ {q:"Kardeş gemi haczedilebilir mi?",a:"Belirli koşullarda evet; alacağın doğduğu andaki ve haciz anındaki mülkiyet durumunun kanuni ölçütü karşılaması gerekir."}]},
+
+{crumb:"Emtia",
+ h1:"Emtia sözleşmeleri, akreditif ve yaptırımlar",
+ lede:"Yük, belgeler ve yaptırımlar — bir ticaretin bozulduğu üç yer.",
+ short:"Emtia uyuşmazlıklarında sözleşme genellikle standart bir formdur, dolayısıyla tartışma neredeyse her zaman belgeler üzerinedir. Bir reddin ayakta kalıp kalmayacağı çoğu zaman bir sertifikaya, bir ihbara ve bunların hangi saatte verildiğine bağlıdır.",
+ steps:[
+ {t:"Sözleşme şartlarını sabitlemek",b:"Hangi standart form, hangi atıf yapılan kurallar, hangi Incoterm ve yükteki riskin fiilen nerede geçtiği."},
+ {t:"Belgeler üzerinde çalışmak",b:"Sertifikalar, ihbarlar ve akreditif altındaki ibraz. Sonuçları ticari haklılık değil, çoğu zaman belgelerdeki uygunsuzluk belirler."},
+ {t:"Uyum sorusunu kapatmak",b:"Karşı tarafların, gemilerin ve rotaların yaptırım ve ihracat kontrolü taraması; pozisyon alındıktan sonra değil önce."}],
+ faq:[
+ {q:"GAFTA kararı Türkiye'de tenfiz edilebilir mi?",a:"Evet, diğer yabancı hakem kararları gibi New York Sözleşmesi kapsamında; tahkim anlaşmasının ve kararın Sözleşme'nin aradığı şartları taşıması kaydıyla."},
+ {q:"Uygunsuz ibraz akreditif talebini her zaman düşürür mü?",a:"Hayır. Uygunsuzluğun UCP'nin tanıdığı süre içinde bildirilip bildirilmediği ve bankanın ret ihbarının aranan biçimi taşıyıp taşımadığı belirleyicidir."}]},
+
+{crumb:"Tenfiz",
+ h1:"Yabancı mahkeme ve hakem kararlarının Türkiye'de tenfizi",
+ lede:"Bir karar, ancak tahsil edebildiğiniz kadar değerlidir. Türkiye ayağını biz yürütüyoruz: borçlu malvarlığını kaçırmadan güvence altına almak, sonra yabancı kararı icra edilebilir bir Türk kararına dönüştürmek.",
+ short:"Türkiye 1992'den bu yana New York Sözleşmesi'ne taraftır; karşılıklılık ve ticari nitelik çekinceleri geçerlidir. Yabancı hakem kararı, borçlunun yerleşim yerindeki ticaret mahkemesine başvuruyla tenfiz edilir. Öncesinde ihtiyati haciz alınabilir ve genellikle alınmalıdır.",
+ steps:[
+ {t:"Kararı çekinceler açısından değerlendirmek",b:"Kararın Sözleşme kapsamına girip girmediği, tahkim yeri devletiyle karşılıklılık bulunup bulunmadığı ve konunun Türk hukuku anlamında ticari sayılıp sayılmadığı. Burada bulunan kusur, duruşmada bulunandan ucuzdur."},
+ {t:"Malvarlığını tespit edip güvenceye almak",b:"Türk sicilleri üzerinden malvarlığı tespiti ve ardından ihtiyati haciz; olgular elverdiği ölçüde borçluya tebligat yapılmadan önce."},
+ {t:"Başvurmak ve icraya dönüştürmek",b:"Onaylı tercümelerle ticaret mahkemesine başvuru, ardından icra takibi: haciz, muhafaza ve satış. Amaç evrak değil tahsilat."}],
+ faq:[
+ {q:"Türkiye'de tenfiz ne kadar sürer?",a:"İlk derece kararı, mahkemenin iş yüküne ve borçlunun istinafa gidip gitmediğine göre genellikle sekiz ile on sekiz ay arasında çıkar. Buna karşılık ihtiyati haciz günler içinde alınabilir ve bu süre boyunca alacağın değerini koruyan şey odur."},
+ {q:"Yabancı mahkeme kararı da aynı yolla tenfiz edilir mi?",a:"Hayır. Yabancı mahkeme kararları Sözleşme'ye değil Türk milletlerarası özel hukuk kurallarına göre tenfiz edilir ve kararı veren devletle karşılıklılık bulunduğunun ispatı gerekir. İspat yükü farklı ve genellikle daha ağırdır."}]}
+]};
+
+var PGL={
+ en:{back:"BACK TO PRACTICE",home:"Home",practice:"Practice",short:"THE SHORT ANSWER",
+     steps:"How it works",stepsT:"THREE STAGES",terms:"What we handle",faq:"Questions",
+     rel:"Related insight",cta:"Talk to us about a matter"},
+ tr:{back:"UZMANLIK ALANLARINA DÖN",home:"Ana sayfa",practice:"Uzmanlık",short:"KISA CEVAP",
+     steps:"Süreç nasıl işler",stepsT:"ÜÇ AŞAMA",terms:"Yürüttüğümüz işler",faq:"Sorular",
+     rel:"İlgili yayınlar",cta:"Dosyanızı görüşelim"}
+};
+
+var REL={
+ en:[{d:"20 MAY 2026",t:"Türkiye cuts nuclear construction withholding to 1%. Who keeps the difference?"},
+     {d:"14 APR 2026",t:"Arresting a vessel in a Turkish port: what security the court will expect"},
+     {d:"02 MAR 2026",t:"Pathological arbitration clauses in Türkiye-connected contracts"},
+     {d:"19 JAN 2026",t:"On-demand bonds under Turkish law: when will a court restrain a call?"}],
+ tr:[{d:"20 MAYIS 2026",t:"Türkiye nükleer santral tevkifatını %1'e indirdi. Farkı kim cebine koyuyor?"},
+     {d:"14 NİSAN 2026",t:"Türk limanında gemi ihtiyati haczi: mahkeme hangi teminatı bekler?"},
+     {d:"02 MART 2026",t:"Türkiye bağlantılı sözleşmelerde sakat tahkim şartları"},
+     {d:"19 OCAK 2026",t:"Türk hukukunda ilk talepte ödeme garantileri"}]
+};
+var RELMAP=[[3,0],[0,2],[2,1],[1,2],[2,0],[2,1]];
+
+var pgIdx=0;
+function renderPage(i){
+  pgIdx=i;
+  var L=PGL[lang]||PGL.en, d=(PAGES[lang]||PAGES.en)[i],
+      terms=((PR[lang]||PR.en)[i]).k, rl=REL[lang]||REL.en;
+
+  document.getElementById('pgBack').textContent=L.back;
+  document.getElementById('pgCrumb').innerHTML=
+    '<a href="#" class="toHome">'+L.home+'</a> · <a href="#" class="toHome">'+L.practice+'</a> · '+d.crumb;
+  document.getElementById('pgH1').textContent=d.h1;
+  document.getElementById('pgLede').textContent=d.lede;
+
+  var h='<div class="ans" style="margin-top:0"><div class="lbl">'+L.short+'</div><p>'+d.short+'</p></div>'
+   +'<div class="head" style="margin-top:70px"><h2>'+L.steps+'</h2><span class="tiny">'+L.stepsT+'</span></div>'
+   +'<div class="steps">'+d.steps.map(function(st,n){
+       return '<div class="step"><div class="num">0'+(n+1)+'</div><div><h4>'+st.t+'</h4><p>'+st.b+'</p></div></div>';
+     }).join('')+'</div>'
+   +'<div class="head" style="margin-top:70px"><h2>'+L.terms+'</h2></div>'
+   +'<div class="chips">'+terms.map(function(k){return '<b>'+k+'</b>';}).join('')+'</div>'
+   +'<div class="head" style="margin-top:70px"><h2>'+L.faq+'</h2></div>'
+   +d.faq.map(function(f,n){
+       return '<details'+(n===0?' open':'')+'><summary>'+f.q+'</summary><p>'+f.a+'</p></details>';
+     }).join('')
+   +'<div class="head" style="margin-top:70px"><h2>'+L.rel+'</h2></div>'
+   +'<div class="rel">'+RELMAP[i].map(function(n){
+       return '<a href="#"><span class="d">'+rl[n].d+'</span><h4>'+rl[n].t+'</h4></a>';
+     }).join('')+'</div>';
+
+  document.getElementById('pgBody').innerHTML=h;
+  document.getElementById('pgCta').textContent=L.cta;
+  document.querySelectorAll('#viewPage .toHome').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();go('home');});
+  });
+  document.querySelectorAll('#pgBody .head').forEach(function(el){el.classList.add('in');});
 }
-var aio=new IntersectionObserver(function(es){
-  es.forEach(function(e){if(e.isIntersecting){typeAI();aio.unobserve(e.target);}});
-},{threshold:.4});
-aio.observe(document.querySelector('.aibox'));
 
 /* ---------- routing ---------- */
 var vHome=document.getElementById('viewHome'),vPage=document.getElementById('viewPage');
-function go(v){
+function go(v,i){
   var page=(v==='page');
+  if(page) renderPage(typeof i==='number'?i:pgIdx);
   vHome.hidden=page; vPage.hidden=!page;
   document.body.classList.toggle('inner',page);
   document.title = page
-    ? (lang==='tr'
-        ? 'Yabancı kararların Türkiye\'de tenfizi | Ulutürk Avukatlık Ortaklığı'
-        : 'Enforcement of foreign awards in Türkiye | Ulutürk Attorney Partnership')
+    ? ((PAGES[lang]||PAGES.en)[pgIdx].h1 + ' | Ulutürk '
+        + (lang==='tr'?'Avukatlık Ortaklığı':'Attorney Partnership'))
     : 'Ulutürk Attorney Partnership | Construction, Energy & International Arbitration — Istanbul';
   window.scrollTo(0,0);
   document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
@@ -1336,34 +1420,34 @@ document.querySelectorAll('.toHome').forEach(function(a){
 /* ---------- command palette ---------- */
 var IDX={
  en:[
-  {h:"Enforcement of foreign judgments and awards",s:"PRACTICE",go:"page"},
-  {h:"Construction & Infrastructure",s:"PRACTICE",sel:0},
-  {h:"Energy & Natural Resources",s:"PRACTICE",sel:1},
-  {h:"International Arbitration",s:"PRACTICE",sel:2},
-  {h:"Shipping & Admiralty",s:"PRACTICE",sel:3},
-  {h:"Commodities & Trade",s:"PRACTICE",sel:4},
+  {h:"Enforcement of foreign judgments and awards",s:"PRACTICE",go:"page",pi:5},
+  {h:"Construction & Infrastructure",s:"PRACTICE",go:"page",pi:0},
+  {h:"Energy & Natural Resources",s:"PRACTICE",go:"page",pi:1},
+  {h:"International Arbitration",s:"PRACTICE",go:"page",pi:2},
+  {h:"Shipping & Admiralty",s:"PRACTICE",go:"page",pi:3},
+  {h:"Commodities & Trade",s:"PRACTICE",go:"page",pi:4},
   {h:"Türkiye cuts nuclear construction withholding to 1%",s:"INSIGHT · ENERGY",hash:"#insight"},
   {h:"Arresting a vessel in a Turkish port",s:"INSIGHT · SHIPPING",hash:"#insight"},
   {h:"Pathological arbitration clauses",s:"INSIGHT · ARBITRATION",hash:"#insight"},
   {h:"On-demand bonds under Turkish law",s:"INSIGHT · CONSTRUCTION",hash:"#insight"},
-  {h:"Can an LCIA award be enforced in Türkiye?",s:"QUESTION",go:"page"},
+  {h:"Can an LCIA award be enforced in Türkiye?",s:"QUESTION",go:"page",pi:5},
   {h:"How quickly can a vessel be arrested?",s:"QUESTION",hash:"#practice"},
   {h:"Is ISTAC an alternative to ICC?",s:"QUESTION",hash:"#practice"},
   {h:"The partnership",s:"PEOPLE",hash:"#people"},
   {h:"Contact and office",s:"CONTACT",hash:"#contact"}
  ],
  tr:[
-  {h:"Yabancı mahkeme ve hakem kararlarının tenfizi",s:"UZMANLIK",go:"page"},
-  {h:"İnşaat ve Altyapı",s:"UZMANLIK",sel:0},
-  {h:"Enerji ve Doğal Kaynaklar",s:"UZMANLIK",sel:1},
-  {h:"Uluslararası Tahkim",s:"UZMANLIK",sel:2},
-  {h:"Denizcilik",s:"UZMANLIK",sel:3},
-  {h:"Emtia ve Ticaret",s:"UZMANLIK",sel:4},
+  {h:"Yabancı mahkeme ve hakem kararlarının tenfizi",s:"UZMANLIK",go:"page",pi:5},
+  {h:"İnşaat ve Altyapı",s:"UZMANLIK",go:"page",pi:0},
+  {h:"Enerji ve Doğal Kaynaklar",s:"UZMANLIK",go:"page",pi:1},
+  {h:"Uluslararası Tahkim",s:"UZMANLIK",go:"page",pi:2},
+  {h:"Denizcilik",s:"UZMANLIK",go:"page",pi:3},
+  {h:"Emtia ve Ticaret",s:"UZMANLIK",go:"page",pi:4},
   {h:"Türkiye nükleer santral tevkifatını %1'e indirdi",s:"YAYIN · ENERJİ",hash:"#insight"},
   {h:"Türk limanında gemi ihtiyati haczi",s:"YAYIN · DENİZCİLİK",hash:"#insight"},
   {h:"Sakat tahkim şartları",s:"YAYIN · TAHKİM",hash:"#insight"},
   {h:"İlk talepte ödeme garantileri",s:"YAYIN · İNŞAAT",hash:"#insight"},
-  {h:"LCIA kararı Türkiye'de tenfiz edilebilir mi?",s:"SORU",go:"page"},
+  {h:"LCIA kararı Türkiye'de tenfiz edilebilir mi?",s:"SORU",go:"page",pi:5},
   {h:"Gemi ne kadar sürede haczedilebilir?",s:"SORU",hash:"#practice"},
   {h:"ISTAC, ICC'ye alternatif mi?",s:"SORU",hash:"#practice"},
   {h:"Ortaklık",s:"EKİP",hash:"#people"},
@@ -1395,7 +1479,7 @@ function draw(){
 function pick(i){
   var r=shown[i]; if(!r) return;
   closePal();
-  if(r.go==='page'){go('page');return;}
+  if(r.go==='page'){go('page',r.pi);return;}
   go('home');
   if(typeof r.sel==='number'){select(r.sel);}
   var target=document.querySelector(r.hash||'#practice');
