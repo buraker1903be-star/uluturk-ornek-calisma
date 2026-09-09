@@ -107,7 +107,7 @@ body.menu .sheet{opacity:1;pointer-events:auto}
 .rose .spin-r{transform-origin:500px 500px;animation:spin 190s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hero .wrap{position:relative;z-index:2;width:100%}
-h1{font-size:clamp(42px,8.2vw,104px);max-width:14ch}
+h1{font-size:clamp(38px,7.4vw,92px);max-width:15ch}
 .ln{display:block;overflow:hidden}
 .ln i{display:block;font-style:normal;transform:translateY(105%);
   animation:up 1.15s var(--ease) forwards}
@@ -123,20 +123,16 @@ h1{font-size:clamp(42px,8.2vw,104px);max-width:14ch}
 @keyframes draw{to{transform:none}}
 
 .ticker{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
-  padding:22px 0;background:var(--ink)}
-.ticker .wrap{display:flex;align-items:center;gap:clamp(18px,3vw,42px);flex-wrap:wrap}
-.ticker .lbl{font-size:9.5px;letter-spacing:.28em;color:#5C6265;white-space:nowrap;
-  padding-right:clamp(6px,2vw,18px);border-right:1px solid var(--hair)}
-.ticker .row{display:flex;align-items:center;gap:clamp(16px,2.6vw,38px);flex-wrap:wrap;flex:1}
-.ticker .row span{font-size:11.5px;letter-spacing:.2em;color:var(--fog);white-space:nowrap;
-  display:flex;align-items:center;gap:clamp(16px,2.6vw,38px);transition:color .4s var(--ease)}
-.ticker .row span::after{content:"";width:3px;height:3px;background:var(--brass);
-  transform:rotate(45deg);display:block;opacity:.7}
-.ticker .row span:last-child::after{display:none}
+  padding:26px 0 28px;background:var(--ink)}
+.ticker .lbl{font-size:9.5px;letter-spacing:.3em;color:#5C6265;margin-bottom:16px}
+.ticker .row{display:flex;flex-wrap:wrap;gap:12px 34px;align-items:baseline}
+.ticker .row span{font-size:11px;letter-spacing:.17em;color:var(--fog);white-space:nowrap;
+  transition:color .4s var(--ease)}
 .ticker:hover .row span{color:#B4B9B9}
 @media(max-width:760px){
-  .ticker .lbl{border-right:none;padding-right:0;width:100%}
-  .ticker .row span{font-size:10.5px}}
+  .ticker{padding:22px 0 24px}
+  .ticker .row{gap:10px 22px}
+  .ticker .row span{font-size:10px;letter-spacing:.13em}}
 
 .rv{opacity:0;transform:translateY(26px);
   transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
