@@ -350,21 +350,50 @@ footer{border-top:1px solid var(--hair);padding:clamp(56px,7vh,86px) 0 0;color:v
   cursor:pointer;transition:background .35s,color .35s}
 .openbtn:hover{background:var(--brass);color:var(--void)}
 
+/* iletişim bölümü */
+.ctas{background:var(--ink);position:relative}
+.ctas::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,rgba(185,155,87,.4),transparent 60%)}
+.ctagrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(46px,6vw,110px);
+  align-items:start}
+@media(max-width:940px){.ctagrid{grid-template-columns:1fr;gap:52px}}
+.ctalede{font-family:"Cormorant Garamond",serif;font-size:clamp(20px,2.1vw,26px);
+  line-height:1.5;color:var(--bone);max-width:34ch;margin:0 0 40px}
+.next{list-style:none;padding:0;margin:0 0 44px;border-top:1px solid var(--hair)}
+.next li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:18px 0;
+  border-bottom:1px solid var(--hair);align-items:baseline}
+.next .nn{font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--brass);line-height:1}
+.next b{display:block;font-weight:300;font-family:"Cormorant Garamond",serif;font-size:19px;
+  color:var(--bone);margin-bottom:5px}
+.next p{margin:0;font-size:13.5px;color:var(--fog);line-height:1.6}
+.direct h5{font-size:9.5px;letter-spacing:.26em;color:#5C6265;font-weight:400;margin:0 0 16px}
+.direct a{display:block;font-size:15.5px;color:var(--bone);margin-bottom:10px;width:max-content}
+.dirNote{font-size:12.5px;color:#5C6265;margin:18px 0 0;letter-spacing:.04em}
+
 /* form */
-.form{display:grid;grid-template-columns:1fr 1fr;gap:26px 34px;max-width:720px;margin-top:8px}
+.formwrap{border-left:1px solid var(--hair);padding-left:clamp(28px,3.5vw,58px)}
+@media(max-width:940px){.formwrap{border-left:none;border-top:1px solid var(--hair);
+  padding:44px 0 0}}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:34px 40px;margin-top:0}
 .form .full{grid-column:1/-1}
 .form label{display:block;font-size:10.5px;letter-spacing:.2em;color:var(--fog);margin-bottom:9px}
 .form input,.form textarea,.form select{width:100%;background:none;border:none;
   border-bottom:1px solid var(--hair);color:var(--bone);font-family:"Jost",sans-serif;
-  font-weight:300;font-size:16px;padding:9px 0;outline:none;transition:border-color .35s}
+  font-weight:300;font-size:17px;padding:12px 0;outline:none;transition:border-color .35s;
+  border-radius:0;-webkit-appearance:none;appearance:none}
+.selwrap{position:relative}
+.selwrap::after{content:"";position:absolute;right:2px;top:16px;width:7px;height:7px;
+  border-right:1px solid var(--brass);border-bottom:1px solid var(--brass);
+  transform:rotate(45deg);pointer-events:none}
+.form select{padding-right:26px;cursor:pointer}
 .form input:focus,.form textarea:focus,.form select:focus{border-bottom-color:var(--brass)}
 .form select option{background:var(--ink)}
-.form textarea{resize:vertical;min-height:76px}
+.form textarea{resize:vertical;min-height:96px}
 .submit{justify-self:start;background:var(--bone);color:var(--void);border:none;
-  font-family:"Jost",sans-serif;font-size:11px;letter-spacing:.2em;padding:15px 30px;
-  cursor:pointer;transition:background .35s}
+  font-family:"Jost",sans-serif;font-size:11px;letter-spacing:.22em;padding:17px 38px;
+  cursor:pointer;margin-top:6px;transition:background .35s}
 .submit:hover{background:var(--brass)}
-.formnote{font-size:12.5px;color:var(--fog);line-height:1.7;max-width:56ch}
+.formnote{font-size:12.5px;color:#6D7377;line-height:1.7;max-width:56ch;margin:4px 0 0}
 .sent{color:var(--brass);font-size:14px;letter-spacing:.04em}
 @media(max-width:700px){.form{grid-template-columns:1fr}}
 
@@ -875,31 +904,51 @@ body.audit .src{display:block}
     <div class="wrap" id="pgBody"></div>
   </section>
 
-  <section style="background:var(--ink)">
+  <section class="ctas">
     <div class="wrap">
       <div class="head"><h2 id="pgCta">Talk to us about a matter</h2><span class="tiny">ISTANBUL</span></div>
-      <div class="form" id="form">
-        <div><label data-k="fName">NAME</label><input type="text" id="fn"></div>
-        <div><label data-k="fOrg">ORGANISATION</label><input type="text" id="fo"></div>
-        <div><label data-k="fMail">EMAIL</label><input type="email" id="fe"></div>
-        <div><label data-k="fArea">MATTER TYPE</label>
-          <select id="fa">
-            <option>Enforcement of a foreign award</option>
-            <option>Construction or infrastructure dispute</option>
-            <option>Shipping or cargo claim</option>
-            <option>Energy project</option>
-            <option>Commodities or trade finance</option>
-            <option>Other</option>
-          </select></div>
-        <div class="full"><label data-k="fMsg">OUTLINE</label><textarea id="fm"></textarea></div>
-        <button class="submit full" id="fs" data-k="fSend">SEND ENQUIRY</button>
-        <p class="formnote full" data-k="fNote">Sending an enquiry does not create a lawyer–client relationship. Please do not include confidential information until we have completed a conflict check and confirmed we are able to act.</p>
+
+      <div class="ctagrid">
+        <div class="ctaside">
+          <p class="ctalede" data-k="ctaLede">Tell us what happened and what you need to achieve. If we are not the right firm for it, we will say so and point you to someone who is.</p>
+
+          <ol class="next">
+            <li><span class="nn">01</span><div><b data-k="n1t">We read it the same day</b><p data-k="n1b">Enquiries reaching us before 17:00 Istanbul time are reviewed that day.</p></div></li>
+            <li><span class="nn">02</span><div><b data-k="n2t">Conflict check</b><p data-k="n2b">We confirm we are able to act before you send anything confidential.</p></div></li>
+            <li><span class="nn">03</span><div><b data-k="n3t">A call with the partner who would run it</b><p data-k="n3b">Not an intake team. The lawyer who would handle the matter.</p></div></li>
+          </ol>
+
+          <div class="direct">
+            <h5 data-k="dirH">DIRECT</h5>
+            <a class="uline" href="mailto:info@uluturk.av.tr">info@uluturk.av.tr</a>
+            <a class="uline" href="tel:+902126932626">+90 212 693 26 26</a>
+            <p class="dirNote" data-k="dirN">Papirus Plaza, Kağıthane · Istanbul · GMT+3</p>
+          </div>
+        </div>
+
+        <div class="formwrap">
+          <div class="form" id="form">
+            <div><label data-k="fName">NAME</label><input type="text" id="fn"></div>
+            <div><label data-k="fOrg">ORGANISATION</label><input type="text" id="fo"></div>
+            <div><label data-k="fMail">EMAIL</label><input type="email" id="fe"></div>
+            <div><label data-k="fArea">MATTER TYPE</label>
+              <div class="selwrap"><select id="fa"></select></div>
+            </div>
+            <div class="full"><label data-k="fMsg">OUTLINE</label><textarea id="fm"></textarea></div>
+            <button class="submit full" id="fs" data-k="fSend">SEND ENQUIRY</button>
+            <p class="formnote full" data-k="fNote">Sending an enquiry does not create a lawyer–client relationship. Please do not include confidential information until we have completed a conflict check and confirmed we are able to act.</p>
+          </div>
+        </div>
       </div>
+
       <div class="note">
         <b>Form kasıtlı olarak kısa.</b> Kurumsal hukuk müvekkili uzun form doldurmaz. Dört alan
-        ve bir açıklama yeterli; “dosya tipi” alanı ise gelen talebi doğru ortağa yönlendirmeyi
-        sağlıyor. Altındaki çekince metni hem meslek kuralları hem de menfaat çatışması
-        kontrolü açısından uluslararası büroların standart uygulamasıdır ve güven artırır.
+        ve bir açıklama yeterli; “dosya tipi” alanı gelen talebi doğru ortağa yönlendiriyor ve
+        hangi uzmanlık sayfasından gelindiyse otomatik seçili geliyor.
+        <br><br>
+        Soldaki üç adım bilinçli: kurumsal müvekkilin form doldurmadan önce bilmek istediği tek şey
+        “ne zaman ve kim dönecek”. Menfaat çatışması kaydı ise hem meslek kuralları hem güven açısından
+        uluslararası büroların standart uygulamasıdır.
       </div>
     </div>
   </section>
@@ -1034,6 +1083,11 @@ var TR={
  epCtaH:"Dosyanızı görüşelim",
  fName:"AD SOYAD",fOrg:"KURUM",fMail:"E-POSTA",fArea:"DOSYA TİPİ",fMsg:"KISA AÇIKLAMA",
  fSend:"GÖNDER",
+ ctaLede:"Ne olduğunu ve neyi başarmanız gerektiğini yazın. Bu iş için doğru büro değilsek bunu söyler, doğru adresi işaret ederiz.",
+ n1t:"Aynı gün okuruz",n1b:"İstanbul saatiyle 17:00'den önce ulaşan başvurular aynı gün değerlendirilir.",
+ n2t:"Menfaat çatışması kontrolü",n2b:"Siz gizli bir şey göndermeden önce görev alabileceğimizi teyit ederiz.",
+ n3t:"Dosyayı yürütecek ortakla görüşme",n3b:"Karşılama ekibiyle değil, işi fiilen yürütecek avukatla.",
+ dirH:"DOĞRUDAN",dirN:"Papirus Plaza, Kağıthane · İstanbul · GMT+3",
  fNote:"Form gönderimi avukat–müvekkil ilişkisi kurmaz. Menfaat çatışması kontrolü tamamlanıp görev alabileceğimizi teyit edene kadar lütfen gizli bilgi paylaşmayın.",
  epOpen:"TAM SAYFAYI AÇ"
 };
@@ -1051,6 +1105,7 @@ function setLang(l){
   document.getElementById('bEN').setAttribute('aria-pressed', l==='en');
   document.getElementById('bTR').setAttribute('aria-pressed', l==='tr');
   render(current);
+  fillMatter();
   if(!vPage.hidden) renderPage(pgIdx);
   cur=-1; if(typeof paintRail==='function') paintRail();
 }
@@ -1392,6 +1447,8 @@ function renderPage(i){
 
   document.getElementById('pgBody').innerHTML=h;
   document.getElementById('pgCta').textContent=L.cta;
+  var sel=document.getElementById('fa');
+  if(sel){ sel.innerHTML=''; fillMatter(); sel.selectedIndex=i; }
   document.querySelectorAll('#viewPage .toHome').forEach(function(a){
     a.addEventListener('click',function(e){e.preventDefault();go('home');});
   });
@@ -1499,6 +1556,22 @@ document.addEventListener('keydown',function(e){
   else if(e.key==='ArrowUp'){e.preventDefault();active=Math.max(active-1,0);draw();}
   else if(e.key==='Enter'){e.preventDefault();pick(active);}
 });
+
+/* ---------- dosya tipi seçenekleri ---------- */
+var MTYPE={
+ en:["Construction or infrastructure dispute","Energy project or licensing",
+     "International arbitration","Shipping or cargo claim",
+     "Commodities or trade finance","Enforcement of a foreign award","Other"],
+ tr:["İnşaat veya altyapı uyuşmazlığı","Enerji projesi veya lisans",
+     "Uluslararası tahkim","Denizcilik veya yük alacağı",
+     "Emtia veya ticaret finansmanı","Yabancı kararın tenfizi","Diğer"]
+};
+function fillMatter(){
+  var sel=document.getElementById('fa'); if(!sel) return;
+  var list=MTYPE[lang]||MTYPE.en, keep=sel.selectedIndex;
+  sel.innerHTML=list.map(function(o){return '<option>'+o+'</option>';}).join('');
+  sel.selectedIndex=(keep>=0&&keep<list.length)?keep:pgIdx;
+}
 
 /* ---------- form ---------- */
 var fs=document.getElementById('fs');
