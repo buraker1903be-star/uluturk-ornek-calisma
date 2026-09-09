@@ -186,8 +186,22 @@ section{padding:clamp(78px,11vh,175px) 0}
 .pp{padding:44px 46px 48px;border-right:1px solid var(--hair)}
 .pp:first-child{padding-left:0}
 .pp:last-child{border-right:none;padding-right:0}
-.pp .init{font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--brass);
-  line-height:1;margin-bottom:22px}
+.ph{position:relative;aspect-ratio:4/5;max-width:310px;margin-bottom:28px;overflow:hidden;
+  background:linear-gradient(160deg,#161A1E 0%,#0F1214 55%,#12161A 100%);
+  border:1px solid var(--hair);transition:border-color .55s var(--ease)}
+.pp:hover .ph{border-color:rgba(185,155,87,.4)}
+.ph svg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.ph .no{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-family:"Cormorant Garamond",serif;font-size:74px;line-height:1;
+  color:rgba(185,155,87,.16);transition:color .55s var(--ease)}
+.pp:hover .ph .no{color:rgba(185,155,87,.3)}
+.ph i{position:absolute;width:13px;height:13px;border:0 solid var(--brass);opacity:.55}
+.ph i:nth-child(3){left:11px;top:11px;border-left-width:1px;border-top-width:1px}
+.ph i:nth-child(4){right:11px;top:11px;border-right-width:1px;border-top-width:1px}
+.ph i:nth-child(5){left:11px;bottom:11px;border-left-width:1px;border-bottom-width:1px}
+.ph i:nth-child(6){right:11px;bottom:11px;border-right-width:1px;border-bottom-width:1px}
+.ph .cap{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:8.5px;
+  letter-spacing:.26em;color:#4C5255}
 .pp h3{font-size:25px;margin-bottom:6px}
 .pp .role{font-size:11.5px;letter-spacing:.16em;color:var(--fog);margin-bottom:18px}
 .pp .meta{font-size:13.5px;color:var(--fog);line-height:1.75;border-top:1px solid var(--hair);
@@ -652,7 +666,12 @@ body.audit .src{display:block}
     <div class="head rv"><h2 data-k="s2">People</h2><span class="tiny" data-k="s2t">THE PARTNERSHIP</span></div>
     <div class="people rv">
       <div class="pp">
-        <div class="init">01</div>
+        <div class="ph">
+          <svg viewBox="0 0 200 250" fill="none" aria-hidden="true"><g stroke="#B99B57" stroke-width=".5" opacity=".18"><circle cx="100" cy="112" r="86"/><circle cx="100" cy="112" r="64"/><circle cx="100" cy="112" r="40"/></g><g stroke="#B99B57" stroke-width=".4" opacity=".1"><line x1="100" y1="8" x2="100" y2="216"/><line x1="-4" y1="112" x2="204" y2="112"/><line x1="30" y1="42" x2="170" y2="182"/><line x1="170" y1="42" x2="30" y2="182"/></g></svg>
+          <span class="no">01</span>
+          <i></i><i></i><i></i><i></i>
+          <span class="cap" data-k="phCap">PORTRAIT</span>
+        </div>
         <h3>[Managing Partner]</h3>
         <div class="role" data-k="r1">MANAGING PARTNER</div>
         <div class="meta">
@@ -662,7 +681,12 @@ body.audit .src{display:block}
         </div>
       </div>
       <div class="pp">
-        <div class="init">02</div>
+        <div class="ph">
+          <svg viewBox="0 0 200 250" fill="none" aria-hidden="true"><g stroke="#B99B57" stroke-width=".5" opacity=".18"><circle cx="100" cy="112" r="86"/><circle cx="100" cy="112" r="64"/><circle cx="100" cy="112" r="40"/></g><g stroke="#B99B57" stroke-width=".4" opacity=".1"><line x1="100" y1="8" x2="100" y2="216"/><line x1="-4" y1="112" x2="204" y2="112"/><line x1="30" y1="42" x2="170" y2="182"/><line x1="170" y1="42" x2="30" y2="182"/></g></svg>
+          <span class="no">02</span>
+          <i></i><i></i><i></i><i></i>
+          <span class="cap" data-k="phCap">PORTRAIT</span>
+        </div>
         <h3>[Partner]</h3>
         <div class="role" data-k="r2">PARTNER</div>
         <div class="meta">
@@ -672,7 +696,12 @@ body.audit .src{display:block}
         </div>
       </div>
       <div class="pp">
-        <div class="init">03</div>
+        <div class="ph">
+          <svg viewBox="0 0 200 250" fill="none" aria-hidden="true"><g stroke="#B99B57" stroke-width=".5" opacity=".18"><circle cx="100" cy="112" r="86"/><circle cx="100" cy="112" r="64"/><circle cx="100" cy="112" r="40"/></g><g stroke="#B99B57" stroke-width=".4" opacity=".1"><line x1="100" y1="8" x2="100" y2="216"/><line x1="-4" y1="112" x2="204" y2="112"/><line x1="30" y1="42" x2="170" y2="182"/><line x1="170" y1="42" x2="30" y2="182"/></g></svg>
+          <span class="no">03</span>
+          <i></i><i></i><i></i><i></i>
+          <span class="cap" data-k="phCap">PORTRAIT</span>
+        </div>
         <h3>[Counsel]</h3>
         <div class="role" data-k="r3">COUNSEL</div>
         <div class="meta">
@@ -683,7 +712,20 @@ body.audit .src{display:block}
       </div>
     </div>
     <div class="note">
-      <b>Neden eklendi.</b> Mevcut sitede ekip sayfası var ama yayınlarda yazar bilgisi yok.
+      <b>Portre alanları hakkında.</b> Çerçeveler bilinçli olarak boş bırakıldı. Bir avukatlık
+      ortaklığının sitesine stok fotoğraf ya da uydurma yüz konulmaz; bu alanlar gerçek çekimle
+      dolar. Çerçeveleri şimdiden koymamın sebebi, çekimin brief'ini görünür kılmak: üç portrenin
+      de aynı oranda (4:5), aynı koyu fonda, aynı ışıkla ve aynı kadrajda çekilmesi gerekiyor.
+      Farklı zamanlarda farklı yerlerde çekilmiş üç fotoğraf, hiç fotoğraf olmamasından daha kötü
+      durur.
+      <br><br>
+      Teknik tarafta: portreler 620×775 piksel, WebP, tanımlayıcı alternatif metinle
+      (“Av. [Ad Soyad], yönetici ortak”) ve <code>loading="lazy"</code> ile verilir. Yapısal
+      veride her ortağın <code>Person</code> kaydına <code>image</code> alanı eklenir — bu,
+      arama sonuçlarında ve yapay zekâ yanıtlarında kişinin tanınmasını doğrudan etkiler.
+      Sitede başka görsel olmadığı için bu üç dosya toplam ağırlığı hissedilir ölçüde artırmaz.
+      <br><br>
+      <b>Yazar kimliği.</b> Mevcut sitede ekip sayfası var ama yayınlarda yazar bilgisi yok.
       Hukuki içerikte yazar kimliği, Google'ın uzmanlık değerlendirmesinde doğrudan ağırlığı
       olan bir sinyal; üretken arama motorları da bir görüşü kime atfedeceğini burada bulur.
       Her ortak için baro kaydı ve çalışma dilleri yazıldı — yabancı muhabir büronun ilk
@@ -1087,7 +1129,7 @@ var TR={
  n1t:"Aynı gün okuruz",n1b:"İstanbul saatiyle 17:00'den önce ulaşan başvurular aynı gün değerlendirilir.",
  n2t:"Menfaat çatışması kontrolü",n2b:"Siz gizli bir şey göndermeden önce görev alabileceğimizi teyit ederiz.",
  n3t:"Dosyayı yürütecek ortakla görüşme",n3b:"Karşılama ekibiyle değil, işi fiilen yürütecek avukatla.",
- dirH:"DOĞRUDAN",dirN:"Papirus Plaza, Kağıthane · İstanbul · GMT+3",
+ phCap:"PORTRE",dirH:"DOĞRUDAN",dirN:"Papirus Plaza, Kağıthane · İstanbul · GMT+3",
  fNote:"Form gönderimi avukat–müvekkil ilişkisi kurmaz. Menfaat çatışması kontrolü tamamlanıp görev alabileceğimizi teyit edene kadar lütfen gizli bilgi paylaşmayın.",
  epOpen:"TAM SAYFAYI AÇ"
 };
